@@ -1,0 +1,30 @@
+{% extends 'layout/base.html'%} {% block content %}
+<div class="row">
+    {% for recipe in recipeCollection %}
+
+    <div class="card recipe-card" style="width: 25rem;">
+        <img src="{{url_for('showImage', filename=recipe['recipe_image_Id'])}}" style="height: 15rem">
+        <div class="card-body">
+            <h4 class="card-title">{{recipe.recipeName}}</h4>
+            <div class="card-text" style="width: 30%; float: left; padding: 0.4rem;">
+                <h6>ingredients</h6>
+                <ul>
+                    {% for ingredient in recipe.ingredients %}
+                    <li><strong>{{ingredient}}</strong></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="card-text" style="width: 70%; float: right; padding: 0.4rem;">
+                <h6>Steps</h6>
+                <ol>
+                    {% for step in recipe.how_to %}
+
+                    <li><strong>{{step}}</strong></li>
+
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endblock %}

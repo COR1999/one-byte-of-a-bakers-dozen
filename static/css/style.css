@@ -1,0 +1,17 @@
+.recipe-card{
+    margin: 0.8rem;
+}
+
+.recipe-card ul > li{
+    font-size: 80%;
+    list-style: none;
+    text-align: left;
+    display: flex;
+    margin: .5rem;
+    margin-left: -2.5rem;
+    
+}
+.recipe-card ol > li{
+    font-size: 70%;
+    margin-left: -2rem;
+}
