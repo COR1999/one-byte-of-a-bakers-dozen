@@ -97,7 +97,24 @@ a:hover{
 
 label{
     font-weight: 800;
-    font-size: 2rem;
+}
+.form-check-label{
+    margin-top: auto;
+    padding-right:2rem;
+    padding-top: calc(.375rem + 1px);
+    padding-bottom: calc(.375rem + 1px);
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: 1.5;
+}
+
+.form-check-input{
+    margin-top: 0.75rem;
+    padding-top: calc(.375rem + 1px);
+    padding-bottom: calc(.375rem + 1px);
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: 2;
 }
 .col-form-label{
     font-size: 1rem;
@@ -107,5 +124,21 @@ label{
 .custom-file-label::after{
     padding-left: 2%;
     padding-right: 2%;
-    image
+}
+
+.vegetarian-true-false{
+    color: #6A3034;
+}
+.fa-li {
+    position: relative;
+    left: 0;
+    top: 0;
+    padding-top: .3rem;
+    
+}
+.checkbox-true{
+    color: #3bda63;
+}
+.checkbox-false{
+    color: red;
 }

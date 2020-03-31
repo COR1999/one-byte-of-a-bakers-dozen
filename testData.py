@@ -29,7 +29,7 @@ def wipeDataBase():
     mongo.db.fs.files.drop()
 
 
-def insertRecipe(recipeName, ingredients, how_to, pathImage):
+def insertRecipe(recipeName, ingredients, how_to, vegetarian, pathImage):
     try:
         extention = os.path.splitext(pathImage)
         if extention:
@@ -46,6 +46,7 @@ def insertRecipe(recipeName, ingredients, how_to, pathImage):
             {"recipeName": recipeName,
              "ingredients": ingredients,
              "how_to": how_to,
+             "vegetarian": vegetarian,
              "recipe_image_Id": randomFileName})
     except Exception as exception:
         exception_message = str(exception)
@@ -61,7 +62,7 @@ logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
 wipeDataBase()
 insertRecipe("Apple Tart", ["4 apple's", "pastery"],
              ["Push them all togeather", "mash them up", "eat"],
-             "./testData/apple.jpg")
+             False, "./testData/apple.jpg")
 insertRecipe("Pancake", ["100g plain flour", "Pinch of salt", "1 Bord Bia Quality Assured egg", "300 ml milk", "1 tablsp. melted butter or sunflower oil"],
              ["Sift the flour and salt into a mixing bowl and make a well in the centre.",
               "Crack the egg into the well; add the melted butter or oil and half the milk. Gradually draw the flour into the liquid by stirring all the time with a wooden spoon until all the flour has been incorporated and then beat well to make a smooth batter.",
@@ -70,6 +71,7 @@ insertRecipe("Pancake", ["100g plain flour", "Pinch of salt", "1 Bord Bia Qualit
               "Lightly grease with oil and then ladle in enough batter to coat the base of the pan thinly (about 2 tablsp.), tilting the pan so the mixture spreads evenly.",
               "Cook over a moderate heat for 1-2 minutes or until the batter looks dry on the top and begins to brown at the edges. Flip the pancake over with a palette knife or fish slice and cook the second side.",
               "Turn onto a plate, smear with a little butter, sprinkle of sugar and a squeeze of lemon juice and serve."],
+             True,
              "./testData/pancake.jpg")
 
 insertRecipe("Scones", ["350g self-raising flour, plus more for dusting", "¼ tsp salt", "1 tsp baking powder",
@@ -87,6 +89,7 @@ insertRecipe("Scones", ["350g self-raising flour, plus more for dusting", "¼ ts
               "Brush the tops with a beaten egg, then carefully place onto the hot baking tray.",
               "Bake for 10 mins until risen and golden on the top. Eat just warm or cold on the day of baking, generously topped with jam and clotted cream. ",
               "If freezing, freeze once cool. Defrost, then put in a low oven (about 160C/fan140C/gas 3) for a few mins to refresh."],
+             True,
              "./testData/scones.jpg")
 insertRecipe("Chorizo & mozzarella gnocchi bake", ["1 tbsp olive oil", "1 onion finely, chopped", "2 garlic cloves, crushed",
                                                    "120g chorizo, diced", "2 x 400g cans chopped tomatoes",
@@ -96,6 +99,7 @@ insertRecipe("Chorizo & mozzarella gnocchi bake", ["1 tbsp olive oil", "1 onion 
                                                    "green salad, to serve"],
              ["Heat the oil in a medium pan over a medium heat. Fry the onion and garlic for 8-10 mins until soft. Add the chorizo and fry for 5 mins more. Tip in the tomatoes and sugar, and season. Bring to a simmer, then add the gnocchi and cook for 8 mins, stirring often, until soft. Heat the grill to high.",
               "Stir ¾ of the mozzarella and most of the basil through the gnocchi. Divide the mixture between six ovenproof ramekins, or put in one baking dish. Top with the remaining mozzarella, then grill for 3 mins, or until the cheese is melted and golden. Season, scatter over the remaining basil and serve with green salad."],
+             False,
              "./testData/chorizoPasta.jpg")
 
 # wipeDataBase()

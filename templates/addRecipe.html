@@ -13,11 +13,22 @@
     </div>
 </nav>
 {% extends 'layout/base.html'%} {% block content %}
-<div class="add-recipe-form ">
-    <form method="POST" action="/createRecipe" enctype="multipart/form-data" style="width: 50%;" class="mx-auto">
+<div class="add-recipe-form">
+    <form name="recipe-form" method="POST" action="/createRecipe" enctype="multipart/form-data" style="width: 50%;"
+        class="mx-auto" onsubmit="validate()">
         <div class="form-group row">
-            <label for="recipeName" class="col-form-label">Recipe Name</label>
-            <input type="text" name="recipeName" id="recipeName" class="form-control">
+            <div class="col-6">
+                <label for="recipeName" class="col-form-label">Recipe Name</label>
+                <input type="text" name="recipeName" id="recipeName" class="form-control"
+                    style="width: 50%; float:right;">
+            </div>
+            <div class="form-check col-6">
+                <label class="form-check-label" for="vegetarian">
+                    Vegetarian Friendly:
+                </label>
+                <input class="form-check-input" type="checkbox" value="True" onclick="toggle_check(this)"
+                    id="vegetarian" name="vegetarian">
+            </div>
         </div>
         <div class="form-group row">
             <label for="ingredients" class="col-form-label">Ingredients</label>
@@ -40,7 +51,6 @@
 </div>
 </form>
 </div>
-
 
 
 

@@ -62,13 +62,20 @@ def createRecipe():
         ingredients = request.form.get("ingredients").split("\n")
         how_to = request.form.get("how_to").split("\n")
         recipeName = request.form.get("recipeName")
+        vegetarian = request.form.get("vegetarian")
+        if vegetarian == None:
+            vegetarian = False
+
+        # print(vegetarian)
         mongo.db.recipe_project.insert_one(
             {"recipeName": recipeName,
              "ingredients": ingredients,
              "how_to": how_to,
+             "vegetarian": vegetarian,
              "recipe_image_Id": randomFileName})
+        return "done"
 
-    return redirect(url_for('loadRecipe', recipeName=recipeName))
+# redirect(url_for('loadRecipe', recipeName=recipeName))
 
 
 @app.route("/showImage/<filename>")

@@ -15,8 +15,17 @@
 
 <div class="card mx-auto" style="width: 70rem; margin-top: 1rem;padding-top: .5rem">
     <img src="{{url_for('showImage', filename=image)}}" style="height: 30rem; width:30rem" class="mx-auto">
+
+
     <div class="card-body">
         <h4 class="card-title" style="text-align: center;">{{recipe.recipeName}}</h4>
+        <div class="card-text vegetarian-true-false">
+            {%if recipe.vegetarian%}
+            <h5>Vegetarian: <i class='fa-li fa fa-check-square checkbox-true'></i></h6>
+                {% else %}
+                <h5>Vegetarian: <i class='fa-li fa fa-square checkbox-false'></i></h5>
+                {% endif %}
+        </div>
         <div class="card-text" style="width: 50%; float: left; padding: 0.4rem;">
             <h6>ingredients</h6>
             {% for ingredient in recipe.ingredients %}
