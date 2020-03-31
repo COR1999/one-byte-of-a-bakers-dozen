@@ -1,12 +1,22 @@
+body{
+    color: #3bda63;
+    background-color: #F8E18D;
+
+}
+
 .recipe-card{
     margin: 0.8rem;
+    display: flex;
+    /* display: flexbox; */
+    /* float: left; */
+    text-align: center;
 }
 
 .recipe-card ul > li{
-    font-size: 80%;
+    font-size: 70%;
     list-style: none;
     text-align: left;
-    display: flex;
+    
     margin: .5rem;
     margin-left: -2.5rem;
     
@@ -14,4 +24,88 @@
 .recipe-card ol > li{
     font-size: 70%;
     margin-left: -2rem;
+}
+
+/* https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html */
+.button {
+    background-color: #3bda63;
+    border: none;
+    color: F2F0EC;
+    padding: .5rem 1rem;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    }
+
+.button > a {
+    color: F2F0EC;
+    text-decoration: none;
+}
+
+.button:hover {
+    color: #4485AA;
+    text-decoration: none;
+}
+.button-wrapper{
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.card{
+    background-color: #4485AA;
+}
+.card-text > h6{
+    text-align: center;
+    font-size: 130%;
+    color: #F8E18D;
+}
+.card-title{
+    font-size: 2.5rem;
+    color: #6A3034;
+    font-weight: 800;
+}
+/* a{
+    text-decoration: none;
+
+}
+a:hover{
+    text-decoration: none;
+} */
+
+.navbar{
+    background-color: #F7734E;  
+}
+.navbar-link{
+    color: #3bda63;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #3bda63;
+    font-weight: 800;
+}
+
+
+.add-recipe-form{
+    background-color: #4485AA;
+    padding: 1rem;
+    margin-top: 4%;
+}
+
+label{
+    font-weight: 800;
+    font-size: 2rem;
+}
+.col-form-label{
+    font-size: 1rem;
+
+}
+
+.custom-file-label::after{
+    padding-left: 2%;
+    padding-right: 2%;
+    image
 }

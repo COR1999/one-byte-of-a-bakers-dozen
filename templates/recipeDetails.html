@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav mx-auto">
+            <a class="nav-item nav-link" href="{{url_for('index')}}">Home</a>
+            <a class="nav-item nav-link" href="{{url_for('addRecipe')}}">Add a recipe</a>
+
+        </div>
+    </div>
+</nav>
+{% extends 'layout/base.html'%} {% block content %}
+
+<div class="card mx-auto" style="width: 70rem; margin-top: 1rem;padding-top: .5rem">
+    <img src="{{url_for('showImage', filename=image)}}" style="height: 30rem; width:30rem" class="mx-auto">
+    <div class="card-body">
+        <h4 class="card-title" style="text-align: center;">{{recipe.recipeName}}</h4>
+        <div class="card-text" style="width: 50%; float: left; padding: 0.4rem;">
+            <h6>ingredients</h6>
+            {% for ingredient in recipe.ingredients %}
+            <ul>
+                <li><strong>{{ingredient}}</strong></li>
+            </ul>
+            {% endfor %}
+        </div>
+        <div class="card-text" style="width: 50%; float: right; padding: 0.4rem;">
+            <h6>Steps</h6>
+            <ol>
+                {% for step in recipe.how_to %}
+
+                <li><strong>{{step}}</strong></li>
+
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+    {% endblock %}

@@ -4,11 +4,12 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 import uuid
 from array import array
+from env import MONGO_URI
 
 app = Flask(__name__)
 
 # app.config["MONGO_DBNAME"] = ""
-app.config["MONGO_URI"] = "mongodb+srv://cian:Greystones123@myfirstcluster-2axpy.mongodb.net/recipe-project?retryWrites=true&w=majority"
+app.config["MONGO_URI"] = MONGO_URI
 
 
 mongo = PyMongo(app)
@@ -27,6 +28,11 @@ def index():
     return redirect("loadManyRecipes")
 
 
+@app.route("/addRecipe")
+def addRecipe():
+    return render_template("addRecipe.html")
+
+
 @app.route("/loadRecipe/<recipeName>")
 def loadRecipe(recipeName):
     name = mongo.db.recipe_project.find_one_or_404({"recipeName": recipeName})
@@ -39,6 +45,9 @@ def loadRecipe(recipeName):
 def loadManyRecipes():
     all_recipes = mongo.db.recipe_project.find()
     list_of_recipes = list(all_recipes)
+    # row_length = 4
+    # for i in range(0, len(all_recipes), row_length):
+
     print(list(all_recipes))
 
     return render_template("loadManyRecipes.html", recipeCollection=list_of_recipes)
@@ -65,6 +74,13 @@ def createRecipe():
 @app.route("/showImage/<filename>")
 def showImage(filename):
     return mongo.send_file(filename)
+
+
+@app.route("/recipeDetails/<recipeName>")
+def recipeDetails(recipeName):
+    recipe = mongo.db.recipe_project.find_one({"recipeName": recipeName})
+    image = recipe["recipe_image_Id"]
+    return render_template("recipeDetails.html", recipe=recipe, image=image)
 
 
 if __name__ == "__main__":

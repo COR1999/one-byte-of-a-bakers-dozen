@@ -74,19 +74,29 @@ insertRecipe("Pancake", ["100g plain flour", "Pinch of salt", "1 Bord Bia Qualit
 
 insertRecipe("Scones", ["350g self-raising flour, plus more for dusting", "¼ tsp salt", "1 tsp baking powder",
                         "85g butter and cut into cubes", "3 tbsp caster sugar", "175ml milk", "1 tsp vanilla extract", "squeeze lemon juice", "beaten egg to glaze",
-                        "jam and clotted cream, to serve"], ["Heat oven to 220C/fan 200C/gas 7.", "Tip 350g self-raising flour into a large bowl with ¼ tsp salt and 1 tsp baking powder, then mix.",
-                                                             "Add 85g butter cubes, then rub in with your fingers until the mix looks like fine crumbs then stir in 3 tbsp caster sugar.",
-                                                             "Put 175ml milk into a jug and heat in the microwave for about 30 secs until warm, but not hot.",
-                                                             "Add 1 tsp vanilla extract and a squeeze of lemon juice, then set aside for a moment.",
-                                                             "Put a baking sheet in the oven.",
-                                                             "Make a well in the dry mix, then add the liquid and combine it quickly with a cutlery knife – it will seem pretty wet at first.",
-                                                             "Scatter some flour onto the work surface and tip the dough out. Dredge the dough and your hands with a little more flour, then fold the dough over 2-3 times until it’s a little smoother. Pat into a round about 4cm deep.",
-                                                             "Take a 5cm cutter (smooth-edged cutters tend to cut more cleanly, giving a better rise) and dip it into some flour. Plunge into the dough, then repeat until you have four scones. You may need to press what’s left of the dough back into a round to cut out another four.",
-                                                             "Brush the tops with a beaten egg, then carefully place onto the hot baking tray.",
-                                                             "Bake for 10 mins until risen and golden on the top. Eat just warm or cold on the day of baking, generously topped with jam and clotted cream. ",
-                                                             "If freezing, freeze once cool. Defrost, then put in a low oven (about 160C/fan140C/gas 3) for a few mins to refresh."],
+                        "jam and clotted cream, to serve"],
+             ["Heat oven to 220C/fan 200C/gas 7.",
+              "Tip 350g self-raising flour into a large bowl with ¼ tsp salt and 1 tsp baking powder, then mix.",
+              "Add 85g butter cubes, then rub in with your fingers until the mix looks like fine crumbs then stir in 3 tbsp caster sugar.",
+              "Put 175ml milk into a jug and heat in the microwave for about 30 secs until warm, but not hot.",
+              "Add 1 tsp vanilla extract and a squeeze of lemon juice, then set aside for a moment.",
+              "Put a baking sheet in the oven.",
+              "Make a well in the dry mix, then add the liquid and combine it quickly with a cutlery knife – it will seem pretty wet at first.",
+              "Scatter some flour onto the work surface and tip the dough out. Dredge the dough and your hands with a little more flour, then fold the dough over 2-3 times until it’s a little smoother. Pat into a round about 4cm deep.",
+              "Take a 5cm cutter (smooth-edged cutters tend to cut more cleanly, giving a better rise) and dip it into some flour. Plunge into the dough, then repeat until you have four scones. You may need to press what’s left of the dough back into a round to cut out another four.",
+              "Brush the tops with a beaten egg, then carefully place onto the hot baking tray.",
+              "Bake for 10 mins until risen and golden on the top. Eat just warm or cold on the day of baking, generously topped with jam and clotted cream. ",
+              "If freezing, freeze once cool. Defrost, then put in a low oven (about 160C/fan140C/gas 3) for a few mins to refresh."],
              "./testData/scones.jpg")
-
+insertRecipe("Chorizo & mozzarella gnocchi bake", ["1 tbsp olive oil", "1 onion finely, chopped", "2 garlic cloves, crushed",
+                                                   "120g chorizo, diced", "2 x 400g cans chopped tomatoes",
+                                                   "1 tsp caster sugar", "600g fresh gnocchi",
+                                                   "125g mozzarella ball, cut into chunks",
+                                                   "small bunch of basil, torn",
+                                                   "green salad, to serve"],
+             ["Heat the oil in a medium pan over a medium heat. Fry the onion and garlic for 8-10 mins until soft. Add the chorizo and fry for 5 mins more. Tip in the tomatoes and sugar, and season. Bring to a simmer, then add the gnocchi and cook for 8 mins, stirring often, until soft. Heat the grill to high.",
+              "Stir ¾ of the mozzarella and most of the basil through the gnocchi. Divide the mixture between six ovenproof ramekins, or put in one baking dish. Top with the remaining mozzarella, then grill for 3 mins, or until the cheese is melted and golden. Season, scatter over the remaining basil and serve with green salad."],
+             "./testData/chorizoPasta.jpg")
 
 # wipeDataBase()
 print(insertRecipe)
