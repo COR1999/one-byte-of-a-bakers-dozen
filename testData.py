@@ -4,7 +4,7 @@ import logging
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from PIL import Image
+# from PIL import Image
 import uuid
 from array import array
 from pymongo import MongoClient
@@ -38,7 +38,7 @@ def insertRecipe(recipeName, ingredients, how_to, vegetarian, pathImage):
             randomFileName = str(uuid.uuid1()) + ".jpg"
         # recipeImage = open(pathImage,'rb')
         with open(pathImage, "rb") as recipeImage:
-            imageId = mongo.save_file(randomFileName, recipeImage,)
+            imageId = mongo.save_file(randomFileName, recipeImage)
 
         # r = fs.get(recipeImage).read()
         print(imageId)

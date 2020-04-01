@@ -4,6 +4,7 @@
 // 
 myForm = document.forms["recipe-form"]
 function validate() {
+
     if (myForm["recipeName"].value == "") {
         alert("Please provide your Recipe Name!");
         myForm["recipeName"].focus();
@@ -24,7 +25,7 @@ function validate() {
     alert(image)
     if (!image) {
         alert("Please provide a image");
-        return true
+        return false
     }
     return (true);
 }
@@ -34,3 +35,11 @@ function isImage(file) {
     let res = allowedExtentions.includes(splitEx)
     return res;//returns true or false
 }
+
+$(document).ready(function () {
+    myForm.onsubmit = function () {
+        // do what you want
+        
+        return false
+    }
+})

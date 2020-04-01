@@ -14,8 +14,8 @@
 </nav>
 {% extends 'layout/base.html'%} {% block content %}
 <div class="add-recipe-form">
-    <form name="recipe-form" method="POST" action="/createRecipe" enctype="multipart/form-data" style="width: 50%;"
-        class="mx-auto" onsubmit="validate()">
+    <form id="recipe-form" name="recipe-form" method="POST" action="/createRecipe" enctype="multipart/form-data"
+        style="width: 50%;" class="mx-auto" onsubmit="validate()">
         <div class="form-group row">
             <div class="col-6">
                 <label for="recipeName" class="col-form-label">Recipe Name</label>
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="form-group row">
-            <input type="submit" class="mx-auto">
+            <input type="submit" id="submit" class="mx-auto">
         </div>
 </div>
 </form>
