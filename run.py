@@ -43,7 +43,7 @@ def loadManyRecipes():
     return render_template("loadManyRecipes.html", recipeCollection=list_of_recipes)
 
 
-@app.route("/createRecipe", methods=["POST", "GET"])
+@app.route("/createRecipe", methods=["POST"])
 def createRecipe():
     if "recipe_image" in request.files:
         recipeImage = request.files["recipe_image"]
@@ -53,6 +53,8 @@ def createRecipe():
         how_to = request.form.get("how_to").split("\n")
         recipeName = request.form.get("recipeName")
         vegetarian = request.form.get("vegetarian")
+        author = request.form.get("firstName")+" " + \
+            request.form.get("lastName")
         if vegetarian == None:
             vegetarian = False
 
@@ -61,7 +63,8 @@ def createRecipe():
              "ingredients": ingredients,
              "how_to": how_to,
              "vegetarian": vegetarian,
-             "recipe_image_Id": randomFileName})
+             "recipe_image_Id": randomFileName,
+             "author": author.lower()})
         return redirect("loadManyRecipes")
 
 # redirect(url_for('loadRecipe', recipeName=recipeName))
@@ -77,6 +80,40 @@ def recipeDetails(recipeName):
     recipe = mongo.db.recipe_project.find_one({"recipeName": recipeName})
     image = recipe["recipe_image_Id"]
     return render_template("recipeDetails.html", recipe=recipe, image=image)
+
+
+@app.route("/login", methods=["POST"])
+def login():
+    email = request.form.get("loginEmail_address").lower()
+    password = request.form.get("loginPassword")
+    user = mongo.db.users.find_one({"email_address": email})
+    dbEmail = user["email_address"]
+    dbPassword = user["password"]
+    firstName = user["FirstName"]
+    lastName = user["LastName"]
+    fullName = firstName.lower() + " " + lastName.lower()
+    all_recipes = mongo.db.recipe_project.find()
+    list_of_recipes = list(all_recipes)
+    print(fullName)
+    recipe = mongo.db.recipe_project.find({"author": fullName})
+    if email == dbEmail and password == dbPassword:
+        return render_template("loadManyRecipes.html", recipeCollection=list(recipe))
+
+
+@app.route("/registerUser", methods=["POST"])
+def registerUser():
+    fName = request.form.get("firstName").lower()
+    lName = request.form.get("lastName").lower()
+    email = request.form.get("email_address").lower()
+    user_password = request.form.get("password")
+    password_repeat = request.form.get("password-repeat")
+    print(fName)
+    mongo.db.users.insert_one(
+        {"FirstName": fName,
+         "LastName": lName,
+         "email_address": email,
+         "password": user_password})
+    return redirect("loadManyRecipes")
 
 
 if __name__ == "__main__":

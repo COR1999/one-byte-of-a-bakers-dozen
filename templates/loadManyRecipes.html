@@ -8,15 +8,17 @@
             <a class="nav-item nav-link active" href="{{url_for('index')}}">Home <span
                     class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="{{url_for('addRecipe')}}">Add a recipe</a>
-
         </div>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login">Login</button>
+
     </div>
 </nav>
 {% extends 'layout/base.html'%} {% block content %}
 <div class="row">
     {% for recipe in recipeCollection %}
     <div class="card recipe-card mx-auto" style="max-width:22rem">
-        <img src="{{url_for('showImage', filename=recipe['recipe_image_Id'])}}" style="width:100%" class="mx-auto">
+        <img src="{{url_for('showImage', filename=recipe['recipe_image_Id'])}}" style="width:100%; height:20rem;"
+            class="mx-auto">
         <div class="card-body">
             <h4 class="card-title">{{recipe.recipeName}}</h4>
             <div class="card-text" style="width: 100%; float: left; padding: 0.4rem; height:40%;">
@@ -26,8 +28,10 @@
                     <li><strong>{{ingredient}}</strong></li>
                     {% endfor %}
                 </ul>
+                <h6 class="text-capitalize">Author: {{recipe.author}}</h6>
                 <div class=" button-wrapper">
-                    <a class="button" href="{{url_for('recipeDetails', recipeName=recipe.recipeName)}}">Details</a>
+                    <a class="button btn btn-success"
+                        href="{{url_for('recipeDetails', recipeName=recipe.recipeName)}}">Details</a>
                 </div>
             </div>
             <!-- <div class="card-text" style="width: 100%; float: left; padding: 0.4rem;">
@@ -46,4 +50,8 @@
 
     {% endfor %}
 </div>
+
+{% include 'modals.html'%}
+
+
 {% endblock %}

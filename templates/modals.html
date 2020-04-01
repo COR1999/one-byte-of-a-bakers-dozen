@@ -1,0 +1,105 @@
+<!--  -->
+<div class="modal" id="login">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Login Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Please login</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form name="login-form" method="POST" action="/login" enctype="multipart/form-data" style=""
+                class="mx-auto">
+                <!-- login body -->
+                <div class="modal-body">
+
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <label for="loginEmail_address" class="col-form-label ">Email Address</label>
+                            <input type="email" name="loginEmail_address" id="loginEmail_address" class="form-control"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <label for="loginPassword" class="col-form-label ">Password</label>
+                            <input type="password" name="loginPassword" id="loginPassword" class="form-control"
+                                required>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- login footer -->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary mr-auto">Login</button>
+                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                        data-target="#SignUp">Register</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!-- Sign up Modal -->
+<div class="modal" id="SignUp">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Sign up header-->
+            <div class="modal-header">
+                <h4 class="modal-title">Sign up</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+
+            <form id="signUp-form" name="signUp-form" method="POST" action="/registerUser" enctype="multipart/form-data"
+                style="width: 50%;" class="mx-auto">
+                <!-- Sign up body-->
+                <div class="modal-body">
+
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <label for="firstName" class="col-form-label ">First name</label>
+                            <input type="text" name="firstName" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <label for="lastName" class="col-form-label ">Last name</label>
+                            <input type="text" name="lastName" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <label for="email_address" class="col-form-label ">Email Address</label>
+                            <input type="email" placeholder="Enter Email" name="email_address" class="form-control"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <label for="password" class="col-form-label ">Password</label>
+                            <input type="password" placeholder="Enter Password" name="password" class="form-control"
+                                required>
+                        </div>
+                        <div class="col-12">
+                            <label for="password-repeat" class="col-form-label"><b>Repeat Password</b></label>
+                            <input type="password" placeholder="Repeat Password" name="password-repeat"
+                                class="form-control" required>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Sign up footer-->
+                <div class="modal-footer">
+                    <button type="submit" id="submit" class="btn btn-primary mr-auto">Sign Up</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -4,7 +4,6 @@
 // 
 myForm = document.forms["recipe-form"]
 function validate() {
-
     if (myForm["recipeName"].value == "") {
         alert("Please provide your Recipe Name!");
         myForm["recipeName"].focus();
@@ -36,10 +35,10 @@ function isImage(file) {
     return res;//returns true or false
 }
 
-$(document).ready(function () {
-    myForm.onsubmit = function () {
-        // do what you want
-        
-        return false
-    }
-})
+// $(document).ready(function () {
+//     myForm.onsubmit = function () {
+//         // do what you want
+
+//         return false
+//     }
+// })

@@ -1,5 +1,5 @@
 body{
-    color: #3bda63;
+    color: #F8E18D;
     background-color: #F8E18D;
 
 }
@@ -28,16 +28,13 @@ body{
 
 /* https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html */
 .button {
-    background-color: #3bda63;
+    margin-top: .4rem;
     border: none;
     color: F2F0EC;
     padding: .5rem 1rem;
-    text-align: center;
-    display: inline-block;
     font-size: 1.5rem;
     margin-left: auto;
     margin-right: auto;
-    cursor: pointer;
     }
 
 .button > a {
@@ -62,12 +59,38 @@ body{
 .card-text > h6{
     text-align: center;
     font-size: 130%;
-    color: #F8E18D;
+    color: #6A3034;
+    font-weight: 800;
+}
+.card-text > h5{
+    font-size: 130%;
+    color: #6A3034;
+    font-weight: 800;
+}
+.card-text{
+    color: lightyellow;
+    font-size: 110%;
 }
 .card-title{
     font-size: 2.5rem;
-    color: #6A3034;
+    color: #F8E18D;
     font-weight: 800;
+}
+.vegetarian-true-false{
+    color: #6A3034;
+}
+.fa-li {
+    position: relative;
+    left: 0;
+    top: 0;
+    padding-top: .3rem;
+    
+}
+.checkbox-true{
+    color: #3bda63;
+}
+.checkbox-false{
+    color: red;
 }
 /* a{
     text-decoration: none;
@@ -81,10 +104,10 @@ a:hover{
     background-color: #F7734E;  
 }
 .navbar-link{
-    color: #3bda63;
+    color: #F8E18D;
 }
 .navbar-light .navbar-nav .nav-link {
-    color: #3bda63;
+    color: #F8E18D;
     font-weight: 800;
 }
 
@@ -126,19 +149,22 @@ label{
     padding-right: 2%;
 }
 
-.vegetarian-true-false{
+
+#login .modal-content{
     color: #6A3034;
+    background-color: #F8E18D;
 }
-.fa-li {
-    position: relative;
-    left: 0;
-    top: 0;
-    padding-top: .3rem;
-    
+
+#login .modal-title{
+    font-size: 180%;
+    font-weight: 700;
 }
-.checkbox-true{
-    color: #3bda63;
+#signUp .modal-content{
+    color: #6A3034;
+    background-color: #F8E18D;
 }
-.checkbox-false{
-    color: red;
+
+#signUp .modal-title{
+    font-size: 180%;
+    font-weight: 700;
 }
