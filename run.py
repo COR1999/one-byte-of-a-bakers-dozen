@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 import uuid
 # from array import array
 from env import MONGO_URI
@@ -96,9 +97,16 @@ def login():
     list_of_recipes = list(all_recipes)
     print(fullName)
     recipe = mongo.db.recipe_project.find({"author": fullName})
-    if email == dbEmail and password == dbPassword:
-        return render_template("loadManyRecipes.html", recipeCollection=list(recipe))
+    print(len(list(recipe)))
+    checkedPW = check_password_hash(dbPassword, password)
+    if len(list(recipe)) == 0:
+        return redirect("loadManyRecipes")
 
+    if email == dbEmail and checkedPW:
+        return render_template("loadManyRecipes.html", recipeCollection=list(recipe))
+    
+    
+    
 
 @app.route("/registerUser", methods=["POST"])
 def registerUser():
@@ -107,13 +115,14 @@ def registerUser():
     email = request.form.get("email_address").lower()
     user_password = request.form.get("password")
     password_repeat = request.form.get("password-repeat")
-    print(fName)
-    mongo.db.users.insert_one(
-        {"FirstName": fName,
-         "LastName": lName,
-         "email_address": email,
-         "password": user_password})
-    return redirect("loadManyRecipes")
+    if user_password == password_repeat:
+        password = generate_password_hash(user_password, method='sha256')
+        mongo.db.users.insert_one(
+            {"FirstName": fName,
+             "LastName": lName,
+             "email_address": email,
+             "password": password})
+        return redirect("loadManyRecipes")
 
 
 if __name__ == "__main__":

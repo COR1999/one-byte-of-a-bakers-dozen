@@ -12,9 +12,12 @@
     </div>
 </nav>
 {% extends 'layout/base.html'%} {% block content %}
-
-<div class="card mx-auto" style="width: 70rem; margin-top: 1rem;padding-top: .5rem">
-    <img src="{{url_for('showImage', filename=image)}}" style="height: 30rem; width:30rem" class="mx-auto">
+<!-- Moved this from inline to css file -->
+<!-- width: 70rem; margin-top: 1rem;padding-top: .5rem -->
+<div class="card mx-auto recipeDetails-card" style="">
+    <!-- Moved style from inline to css file -->
+    <!-- height: 30rem; width:30rem; -->
+    <img src="{{url_for('showImage', filename=image)}}" style="" class="mx-auto">
 
 
     <div class="card-body">
