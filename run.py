@@ -6,15 +6,16 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import uuid
 import configparser
 # from array import array
-# from env import MONGO_URI
-config = configparser.ConfigParser()
-config.read('config.ini')
-mongo_uri = config['mongodb']['uri']
+from env import *
+# config = configparser.ConfigParser()
+# config.read('config.ini')
+# mongo_uri = config['mongodb']['uri']
+
 
 app = Flask(__name__)
 
 # app.config["MONGO_DBNAME"] = ""
-app.config["MONGO_URI"] = mongo_uri
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
 
 mongo = PyMongo(app)
