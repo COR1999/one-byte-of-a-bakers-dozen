@@ -4,13 +4,17 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 import uuid
+import configparser
 # from array import array
-from env import MONGO_URI
+# from env import MONGO_URI
+config = configparser.ConfigParser()
+config.read('config.ini')
+mongo_uri = config['mongodb']['uri']
 
 app = Flask(__name__)
 
 # app.config["MONGO_DBNAME"] = ""
-app.config["MONGO_URI"] = MONGO_URI
+app.config["MONGO_URI"] = mongo_uri
 
 
 mongo = PyMongo(app)
@@ -104,9 +108,7 @@ def login():
 
     if email == dbEmail and checkedPW:
         return render_template("loadManyRecipes.html", recipeCollection=list(recipe))
-    
-    
-    
+
 
 @app.route("/registerUser", methods=["POST"])
 def registerUser():
@@ -129,5 +131,3 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=(os.environ.get("PORT")),
             debug=True)
-
-

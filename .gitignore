@@ -1,3 +1,4 @@
 env.py
 .gitignore
 env
+config.ini
