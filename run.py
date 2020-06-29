@@ -6,7 +6,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import uuid
 import configparser
 # from array import array
-from env import *
+if os.path.exists("env.py"):
+    import env
 # config = configparser.ConfigParser()
 # config.read('config.ini')
 # mongo_uri = config['mongodb']['uri']
