@@ -1,24 +1,32 @@
-{% extends 'layout/base.html'%} {% block content %}
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand mx-auto" href="#">One byte of a bakers dozen</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav mx-auto">
+            {% extends 'layout/base.html'%} {% block content %}
 
-<div class="card" style="width: 25rem;">
-    <img src="{{url_for('showImage', filename=image)}}" style="height: 20rem">
-    <div class="card-body">
-        <h4 class="card-title">{{recipeObject.recipeName}}</h4>
-        <div class="card-text" style="width: 50%; float: left; padding: 0.4rem;">
-            <h6>ingredients</h6>
-            {% for ingredient in recipeObject.ingredients %}
-            <ul>
-                <li><strong>{{ingredient}}</strong></li>
-            </ul>
-            {% endfor %}
-        </div>
-        <div class="card-text" style="width: 50%; float: right; padding: 0.4rem;">
-            <h6>Steps</h6>
-            {% for step in recipeObject.how_to %}
-            <ul>
-                <li><strong>{{step}}</strong></li>
-            </ul>
-            {% endfor %}
-        </div>
-    </div>
-    {% endblock %}
+            <div class="card" style="width: 25rem;">
+                <img src="{{url_for('showImage', filename=image)}}" style="height: 20rem">
+                <div class="card-body">
+                    <h4 class="card-title">{{recipeObject.recipeName}}</h4>
+                    <div class="card-text" style="width: 50%; float: left; padding: 0.4rem;">
+                        <h6>ingredients</h6>
+                        {% for ingredient in recipeObject.ingredients %}
+                        <ul>
+                            <li><strong>{{ingredient}}</strong></li>
+                        </ul>
+                        {% endfor %}
+                    </div>
+                    <div class="card-text" style="width: 50%; float: right; padding: 0.4rem;">
+                        <h6>Steps</h6>
+                        {% for step in recipeObject.how_to %}
+                        <ul>
+                            <li><strong>{{step}}</strong></li>
+                        </ul>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endblock %}

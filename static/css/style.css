@@ -134,9 +134,27 @@ a:hover{
     font-weight: 800;
     font-size: 150%;
 }
+.navbar-nav{
+    padding-left: 6%;
+}
 .navbar-collapse{
     text-align: center;
 }
+.navbar-brand{
+    font-size: 150%;
+    font-weight: 800;
+}
+/* @media(min-width: 992px){
+    .mx-auto-1{
+        margin-left: 20%;
+        margin-right: auto;
+    }
+} */
+/* .mx-auto-1{
+    margin-left: auto;
+    margin-right: auto;
+} */
+
 
 
 .add-recipe-form{
