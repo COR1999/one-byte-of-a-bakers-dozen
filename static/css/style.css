@@ -135,7 +135,7 @@ a:hover{
     font-size: 150%;
 }
 .navbar-nav{
-    padding-left: 6%;
+    /* padding-left: 6%; */
 }
 .navbar-collapse{
     text-align: center;

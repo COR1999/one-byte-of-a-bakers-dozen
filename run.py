@@ -5,31 +5,46 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 import uuid
 import configparser
+from flask import Blueprint
+from views.db import *
+from views.env import *
+from views.loadManyRecipes import *
+from views.register import *
+# from views.login_user import login_user
+# from views.register import register
 # from array import array
-if os.path.exists("env.py"):
-    import env
-# config = configparser.ConfigParser()
-# config.read('config.ini')
-# mongo_uri = config['mongodb']['uri']
 
+# if os.path.exists("views/env.py"):
+#     import env
 
-app = Flask(__name__)
+# x = os.getenv("MONGO_URI")
+# print(x)
 
-# app.config["MONGO_DBNAME"] = ""
-app.config["MONGO_URI"] = os.getenv("MONGO_URI")
+# app = create_app()
+app = Flask(__name__, instance_relative_config=True)
+mongo = create_app(app)
+# app.register_blueprint(register)
+# login_user = Blueprint('login_user', __name__)
+# load_recipe = Blueprint('loadManyRecipes', __name__)
 
-
-mongo = PyMongo(app)
+# app.register_blueprint(load_recipe)
 
 
 @app.route("/")
 def index():
-    return redirect("loadManyRecipes")
+    # return redirect("loadManyRecipes")
+    return loadManyRecipes(mongo)
 
 
 @app.route("/addRecipe")
 def addRecipe():
     return render_template("addRecipe.html")
+
+
+@app.route("/registerUser", methods=["POST"])
+def registerUser():
+    register(mongo)
+    return loadManyRecipes(mongo)
 
 
 @app.route("/loadRecipe/<recipeName>")
@@ -40,14 +55,14 @@ def loadRecipe(recipeName):
     return render_template("showRecipe.html", recipeObject=recipeObject, image=imageId)
 
 
-@app.route("/loadManyRecipes")
-def loadManyRecipes():
-    all_recipes = mongo.db.recipe_project.find()
-    list_of_recipes = list(all_recipes)
+# @app.route("/loadManyRecipes")
+# def loadManyRecipes():
+#     all_recipes = mongo.db.recipe_project.find()
+#     list_of_recipes = list(all_recipes)
 
-    print(list(all_recipes))
+#     print(list(all_recipes))
 
-    return render_template("loadManyRecipes.html", recipeCollection=list_of_recipes)
+#     return render_template("loadManyRecipes.html", recipeCollection=list_of_recipes)
 
 
 @app.route("/createRecipe", methods=["POST"])
@@ -87,46 +102,6 @@ def recipeDetails(recipeName):
     recipe = mongo.db.recipe_project.find_one({"recipeName": recipeName})
     image = recipe["recipe_image_Id"]
     return render_template("recipeDetails.html", recipe=recipe, image=image)
-
-
-@app.route("/login", methods=["POST"])
-def login():
-    email = request.form.get("loginEmail_address").lower()
-    password = request.form.get("loginPassword")
-    user = mongo.db.users.find_one({"email_address": email})
-    dbEmail = user["email_address"]
-    dbPassword = user["password"]
-    firstName = user["FirstName"]
-    lastName = user["LastName"]
-    fullName = firstName.lower() + " " + lastName.lower()
-    all_recipes = mongo.db.recipe_project.find()
-    list_of_recipes = list(all_recipes)
-    print(fullName)
-    recipe = mongo.db.recipe_project.find({"author": fullName})
-    print(len(list(recipe)))
-    checkedPW = check_password_hash(dbPassword, password)
-    if len(list(recipe)) == 0:
-        return redirect("loadManyRecipes")
-
-    if email == dbEmail and checkedPW:
-        return render_template("loadManyRecipes.html", recipeCollection=list(recipe))
-
-
-@app.route("/registerUser", methods=["POST"])
-def registerUser():
-    fName = request.form.get("firstName").lower()
-    lName = request.form.get("lastName").lower()
-    email = request.form.get("email_address").lower()
-    user_password = request.form.get("password")
-    password_repeat = request.form.get("password-repeat")
-    if user_password == password_repeat:
-        password = generate_password_hash(user_password, method='sha256')
-        mongo.db.users.insert_one(
-            {"FirstName": fName,
-             "LastName": lName,
-             "email_address": email,
-             "password": password})
-        return redirect("loadManyRecipes")
 
 
 if __name__ == "__main__":
