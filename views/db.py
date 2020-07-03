@@ -1,10 +1,10 @@
 import os
 from flask_pymongo import PyMongo
 from flask import Flask
-from env import *
+# from env import *
 
-# if os.path.exists("env.py"):
-#     import env
+if os.path.exists("env.py"):
+    import env
 
 # x = os.getenv("MONGO_URI")
 # print(x)
