@@ -7,7 +7,7 @@ import uuid
 import configparser
 from flask import Blueprint
 from views.db import *
-from views.env import *
+# from views.env import *
 from views.loadManyRecipes import *
 from views.register import *
 from views.createRecipe import *
