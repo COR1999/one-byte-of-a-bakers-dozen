@@ -7,11 +7,11 @@ import uuid
 import configparser
 from flask import Blueprint
 from views.db import *
-# from views.env import *
 from views.loadManyRecipes import *
 from views.register import *
 from views.createRecipe import *
 from views.recipeDetails import *
+# from views.env import *
 
 
 app = Flask(__name__, instance_relative_config=True)
@@ -20,7 +20,6 @@ mongo = create_app(app)
 
 @app.route("/")
 def index():
-    # return redirect("loadManyRecipes")
     return loadManyRecipes(mongo)
 
 
