@@ -10,7 +10,7 @@ createApp = Blueprint('createApp', __name__)
 def create_app(app):
     app.config["MONGO_URI"] = os.getenv("MONGO_URI")
     mongo = PyMongo(app)
-    mongo.init_app(app)
+    # mongo.init_app(app)
     return mongo
 
 
