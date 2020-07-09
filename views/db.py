@@ -1,7 +1,10 @@
 import os
 from flask_pymongo import PyMongo
 from flask import Flask, Blueprint
-from views.env import *
+# from views.env import *
+
+if os.path.exists("views/env.py"):
+    from views.env import *
 
 createApp = Blueprint('createApp', __name__)
 
@@ -10,7 +13,7 @@ createApp = Blueprint('createApp', __name__)
 def create_app(app):
     app.config["MONGO_URI"] = os.getenv("MONGO_URI")
     mongo = PyMongo(app)
-    # mongo.init_app(app)
+    mongo.init_app(app)
     return mongo
 
 
