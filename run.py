@@ -11,7 +11,6 @@ from views.loadManyRecipes import *
 from views.register import *
 from views.createRecipe import *
 from views.recipeDetails import *
-# from views.env import *
 
 
 app = Flask(__name__, instance_relative_config=True)

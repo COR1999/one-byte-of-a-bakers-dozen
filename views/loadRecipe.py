@@ -16,4 +16,3 @@ def load_recipe(mongo, recipeName):
     recipeObject = mongo.db.recipe_project.find_one(name)
     imageId = recipeObject["recipe_image_Id"]
     return render_template("showRecipe.html", recipeObject=recipeObject, image=imageId)
-
