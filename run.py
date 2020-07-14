@@ -6,14 +6,23 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import uuid
 import configparser
 from flask import Blueprint
-from views.db import *
-from views.loadManyRecipes import *
-from views.register import *
-from views.createRecipe import *
-from views.recipeDetails import *
+from views.db import create_app
+from views.load_many_recipes import load_many_recipes
+from views.register import register
+from views.create_recipe import create
+from views.recipe_details import recipe_details
+# from views.db import createApp
 
 
 app = Flask(__name__, instance_relative_config=True)
+# app.register_blueprint(createApp, url_prefix='/views')
+# app.register_blueprint(create_recipe)
+# app.register_blueprint(load_recipe)
+# app.register_blueprint(recipe_Details)
+# app.register_blueprint(login_user)
+# app.register_blueprint(register)
+
+
 mongo = create_app(app)
 
 

@@ -10,10 +10,10 @@ from flask import Blueprint
 # from loadManyRecipes import *
 
 
-register = Blueprint('register', __name__)
+register_user = Blueprint('register_user', __name__)
 
 
-@register.route("/register", methods=["POST"])
+@register_user.route("/register_user", methods=["POST"])
 def register(mongo):
     fName = request.form.get("firstName").lower()
     lName = request.form.get("lastName").lower()

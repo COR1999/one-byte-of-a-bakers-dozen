@@ -6,10 +6,10 @@ from flask import Flask, Blueprint
 if os.path.exists("views/env.py"):
     from views.env import *
 
-createApp = Blueprint('createApp', __name__)
+create_app = Blueprint('create_app', __name__)
 
 
-@createApp.route("/createApp")
+@create_app.route("/create_app")
 def create_app(app):
     app.config["MONGO_URI"] = os.getenv("MONGO_URI")
     mongo = PyMongo(app)

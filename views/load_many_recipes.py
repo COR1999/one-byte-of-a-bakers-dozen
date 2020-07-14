@@ -13,7 +13,7 @@ load_recipe = Blueprint('load_recipe', __name__)
 
 
 @load_recipe.route("/loadManyRecipes")
-def loadManyRecipes(mongo):
+def load_many_recipes(mongo):
     all_recipes = mongo.db.recipe_project.find()
     list_of_recipes = list(all_recipes)
 

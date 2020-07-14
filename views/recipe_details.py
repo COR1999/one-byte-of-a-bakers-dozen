@@ -7,11 +7,11 @@ from flask import Blueprint
 
 # from run import *
 
-recipe_Details = Blueprint('recipe_Details', __name__)
+recipe_details = Blueprint('recipe_details', __name__)
 
 
-@recipe_Details.route("/recipeDetails/<recipeName>")
-def recipe_Details(mongo, recipeName):
+@recipe_details.route("/recipe_details/<recipeName>")
+def recipe_details(mongo, recipeName):
     recipe = mongo.db.recipe_project.find_one({"recipeName": recipeName})
     image = recipe["recipe_image_Id"]
     return render_template("recipeDetails.html", recipe=recipe, image=image)
