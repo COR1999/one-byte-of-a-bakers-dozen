@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>One Byte of a bakers dozen</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <a class="navbar-brand " href="{{url_for('load_many_recipes.load_recipes')}}">One byte of a bakers dozen</a>
+
+            <div class="navbar-nav mx-auto">
+
+                <a class="nav-item nav-link active" href="{{url_for('load_many_recipes.load_recipes')}}">Home <span
+                        class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="{{url_for('create_recipe.load_create_page')}}">Add a recipe</a>
+
+
+            </div>
+            {% if not session["user_name"] %}
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login">Login</button>
+            {% else %}
+            <div id="content-wrap">
+                <h1>Wellcome {{ session["user_name"] }}</h1>
+            </div>
+            {% endif %}
+        </div>
+    </nav>
+
+
+    <div id="page-container">
+
+        {% block content %}{% endblock %}
+
+        <footer class="tm-footer row tm-mt-small">
+            <div class="col-12 font-weight-light">
+                <p class="text-center text-white mb-0 px-4 small">
+                    Copyright &copy; <b>2020</b> All rights reserved.
+
+                </p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!-- cant import Js -->
+    <link href="{{url_for('static', filename='js/script.js')}}" type="js" />
+
+</body>
+
+</html>

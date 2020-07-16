@@ -1,21 +1,22 @@
 
 import os
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, Blueprint
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 import uuid
 import configparser
 # from run import *
-from flask import Blueprint
+
+from views.db import mongo
 
 # from run import *
 
 create_recipe = Blueprint('create_recipe', __name__)
 
 
-@create_recipe.route("/create", methods=["POST"])
-def create(mongo, request):
+@create_recipe.route("/create", methods=["POST", "GET"])
+def create():
     if "recipe_image" in request.files:
         recipeImage = request.files["recipe_image"]
         randomFileName = str(uuid.uuid1()) + recipeImage.filename
@@ -35,3 +36,9 @@ def create(mongo, request):
              "vegetarian": vegetarian,
              "recipe_image_Id": randomFileName,
              "author": author.lower()})
+        return redirect(url_for("load_many_recipes.load_recipes"))
+
+
+@create_recipe.route("/create_page")
+def load_create_page():
+    return render_template("add_recipe.html")

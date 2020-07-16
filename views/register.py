@@ -13,8 +13,9 @@ from flask import Blueprint
 register_user = Blueprint('register_user', __name__)
 
 
-@register_user.route("/register_user", methods=["POST"])
+@register_user.route("/register_user", methods=["POST", "GET"])
 def register(mongo):
+    session["user_name"]
     fName = request.form.get("firstName").lower()
     lName = request.form.get("lastName").lower()
     email = request.form.get("email_address").lower()

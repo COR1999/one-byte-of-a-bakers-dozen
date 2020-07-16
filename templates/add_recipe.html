@@ -1,23 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand mx-auto" href="#">One byte of a bakers dozen</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav mx-auto">
-            <a class="nav-item nav-link" href="{{url_for('index')}}">Home</a>
-            <a class="nav-item nav-link active" href="{{url_for('addRecipe')}}">Add a recipe <span
-                    class="sr-only">(current)</span></a>
-
-
-        </div>
-        <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-target="#login">Login</button>
-    </div>
-</nav>
-{% extends 'layout/base.html'%} {% block content %}
+{% extends 'layout/footer_nav.html'%} {% block content %}
 <div class="add-recipe-form">
-    <form id="recipe-form" name="recipe-form" method="POST" action="/createRecipe" enctype="multipart/form-data"
+    <form id="recipe-form" name="recipe-form" method="POST" action="/create" enctype="multipart/form-data"
         style="width: 50%;" class="mx-auto" onsubmit="validate()">
         <div class="form-group row">
             <div class="col-6">

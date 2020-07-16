@@ -9,7 +9,7 @@ import uuid
 from array import array
 from pymongo import MongoClient
 from statistics import mode
-from env import MONGO_URI
+from views.env import MONGO_URI
 
 
 app = Flask(__name__)

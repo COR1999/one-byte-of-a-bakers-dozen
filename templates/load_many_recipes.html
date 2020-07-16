@@ -4,16 +4,17 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <a class="navbar-brand " href="{{url_for('index')}}">One byte of a bakers dozen</a>
+        <!-- <a class="navbar-brand " href="{{url_for('index')}}">One byte of a bakers dozen</a> -->
 
         <div class="navbar-nav mx-auto">
 
-            <a class="nav-item nav-link active" href="{{url_for('index')}}">Home <span
+            <!-- <a class="nav-item nav-link active" href="{{url_for('index')}}">Home <span
                     class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="{{url_for('addRecipe')}}">Add a recipe</a>
+            <a class="nav-item nav-link" href="{{url_for('addRecipe')}}">Add a recipe</a> -->
 
 
         </div>
+
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login">Login</button>
 
     </div>
@@ -42,8 +43,7 @@
                 </ul>
                 <h6 class="text-capitalize">Author: {{recipe.author}}</h6>
                 <div class=" button-wrapper">
-                    <a class="button btn btn-success"
-                        href="{{url_for('recipeDetails', recipeName=recipe.recipeName)}}">Details</a>
+                    
                 </div>
             </div>
             <!-- <div class="card-text" style="width: 100%; float: left; padding: 0.4rem;">

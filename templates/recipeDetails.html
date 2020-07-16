@@ -1,27 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand mx-auto" href="#">One byte of a bakers dozen</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav mx-auto">
-            <a class="nav-item nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="{{url_for('addRecipe')}}">Add a recipe</a>
-
-        </div>
-        <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-target="#login">Login</button>
-    </div>
-</nav>
-
-
-{% extends 'layout/base.html'%} {% block content %}
+{% extends "layout/footer_nav.html" %}
+{% block content %}
 <!-- Moved this from inline to css file -->
 <!-- width: 70rem; margin-top: 1rem;padding-top: .5rem -->
 <div class="card mx-auto recipeDetails-card" style="">
     <!-- Moved style from inline to css file -->
     <!-- height: 30rem; width:30rem; -->
-    <img src="{{url_for('showImage', filename=image)}}" style="" class="mx-auto">
+    <img src="{{url_for('load_many_recipes.showImage', filename=image)}}" style="" class="mx-auto">
 
 
     <div class="card-body">
