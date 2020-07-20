@@ -3,8 +3,7 @@
 <!-- Moved this from inline to css file -->
 <!-- width: 70rem; margin-top: 1rem;padding-top: .5rem -->
 <div class="card mx-auto recipeDetails-card" style="">
-    <!-- Moved style from inline to css file -->
-    <!-- height: 30rem; width:30rem; -->
+
     <img src="{{url_for('load_many_recipes.showImage', filename=image)}}" style="" class="mx-auto">
 
 
@@ -35,5 +34,10 @@
                 {% endfor %}
             </ol>
         </div>
+        <!-- {{recipe.author}}{{session["user_name"]}} -->
+        {% if session["user_name"] == recipe.author %}
+        <a class="button btn btn-success"
+            href="{{url_for('edit_recipe.load_edit_page', recipeName=recipe.recipeName)}}">Edit</a>
+        {% endif %}
     </div>
     {% endblock %}

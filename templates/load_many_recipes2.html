@@ -1,7 +1,9 @@
 {% extends "layout/footer_nav.html" %}
 {% block content %}
 
-
+{% if not session["user_name"] %}
+<h1>Please log in to edit recipes</h1>
+{% endif %}
 <div class="row">
     {% for recipe in recipeCollection %}
 

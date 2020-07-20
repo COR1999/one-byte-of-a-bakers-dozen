@@ -9,16 +9,17 @@ import uuid
 from array import array
 from pymongo import MongoClient
 from statistics import mode
-from views.env import MONGO_URI
+from views.db import mongo
+
+if os.path.exists("views/env.py"):
+    from views.env import *
 
 
 app = Flask(__name__)
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
+app.secret_key = "random_string"
+mongo.init_app(app)
 
-# app.config["MONGO_DBNAME"] = ""
-app.config["MONGO_URI"] = MONGO_URI
-
-
-mongo = PyMongo(app)
 
 print("Sarting program")
 
@@ -97,7 +98,7 @@ insertRecipe("Chorizo & mozzarella gnocchi bake", ["1 tbsp olive oil", "1 onion 
              ["Heat the oil in a medium pan over a medium heat. Fry the onion and garlic for 8-10 mins until soft. Add the chorizo and fry for 5 mins more. Tip in the tomatoes and sugar, and season. Bring to a simmer, then add the gnocchi and cook for 8 mins, stirring often, until soft. Heat the grill to high.",
               "Stir ¾ of the mozzarella and most of the basil through the gnocchi. Divide the mixture between six ovenproof ramekins, or put in one baking dish. Top with the remaining mozzarella, then grill for 3 mins, or until the cheese is melted and golden. Season, scatter over the remaining basil and serve with green salad."],
              False,
-             "./testData/chorizoPasta.jpg", "Sam Smith")
+             "./testData/chorizoPasta.jpg", "cian orourke")
 
 # wipeDataBase()
 print(insertRecipe)

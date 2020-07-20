@@ -23,8 +23,9 @@
 
                 <a class="nav-item nav-link active" href="{{url_for('load_many_recipes.load_recipes')}}">Home <span
                         class="sr-only">(current)</span></a>
+                {% if session["user_name"] %}
                 <a class="nav-item nav-link" href="{{url_for('create_recipe.load_create_page')}}">Add a recipe</a>
-
+                {% endif %}
 
             </div>
             {% if not session["user_name"] %}

@@ -35,7 +35,7 @@ def login():
     recipe = mongo.db.recipe_project.find({"author": fullName})
     print(len(list(recipe)))
     checkedPW = check_password_hash(dbPassword, password)
-    session["user_name"] = firstName
+    session["user_name"] = fullName
     if len(list(recipe)) == 0:
         return redirect(url_for("load_many_recipes.load_recipes"))
 
