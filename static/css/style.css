@@ -9,11 +9,20 @@ h1{
 }
 
 .recipe-card{
-    margin: 0.8rem;
+    /* margin: 0.3rem; */
     display: flex;
-    /* display: flexbox; */
-    /* float: left; */
+
     text-align: center;
+    float: none;
+    margin: 0 auto;
+    margin-top: 1rem;
+
+    /* margin-right: 1rem;
+    margin-left: 1rem; */
+}
+.recipe-card-row{
+    margin: auto;
+    
 }
 
 .recipe-card ul > li{

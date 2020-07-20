@@ -24,7 +24,7 @@ def load_recipes():
 
     print(list(all_recipes))
 
-    return render_template("load_many_recipes2.html", recipeCollection=list_of_recipes)
+    return render_template("load_many_recipes.html", recipeCollection=list_of_recipes)
 
 
 @load_many_recipes.route("/showImage/<filename>")
