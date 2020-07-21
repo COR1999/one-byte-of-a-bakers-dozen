@@ -52,4 +52,5 @@ def edit():
 @edit_recipe.route("/edit_page/<recipeName>")
 def load_edit_page(recipeName):
     recipe = mongo.db.recipe_project.find_one({"recipeName": recipeName})
-    return render_template("edit_recipe.html",  recipe=recipe)
+    image = recipe["recipe_image_Id"]
+    return render_template("edit_recipe.html",  recipe=recipe, image=image)
