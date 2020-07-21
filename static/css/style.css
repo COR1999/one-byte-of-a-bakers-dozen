@@ -107,13 +107,35 @@ h1{
 }
 
 .recipeDetails-card{
-    width: 70rem;
+    width: 80%;
     margin-top: 1rem;
     padding-top: .5rem;
+    color: #F8E18D;
+    font-weight:700;
+
+}
+.card-text-details > h5{
+    color:#6A3034;
+    font-weight:700;
+    font-size: 80%;
+    text-align:center;
+
+}
+.card-text-details > h6{
+    color:#6A3034;
+    font-weight:700;
 }
 .recipeDetails-card img{
-    height: 30rem;
-    width:30rem;
+    max-width: 80%;
+    margin: auto;
+}
+@media(min-width: 800px){
+    .card-ingredients, .card-steps{
+        width: 50%;
+    }
+    .card-text-details{
+        font-size:80%;
+    }
 }
 .recipe-card-text{
     width: 100%;
@@ -208,16 +230,12 @@ label{
 }
 
 
-#login .modal-content{
-    color: #6A3034;
-    background-color: #F8E18D;
-}
 
 #login .modal-title{
     font-size: 180%;
     font-weight: 700;
 }
-#signUp .modal-content{
+.modal-content{
     color: #6A3034;
     background-color: #F8E18D;
 }
