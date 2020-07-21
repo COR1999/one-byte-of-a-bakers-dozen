@@ -25,30 +25,31 @@ def edit():
         how_to = request.form.get("how_to").split("\n")
         recipeName = request.form.get("recipeName")
         vegetarian = request.form.get("vegetarian")
-        author = request.form.get("firstName")+" " + \
-            request.form.get("lastName")
+        author = request.form.get("author")
         if vegetarian == None:
             vegetarian = False
-
+        # document_to_update = mongo.db.recipe_project.find_one({"recipeName": recipeName,
+        #                                                        "author": author.lower()})
         # replacement_data = {"recipeName": recipeName,
         #                     "ingredients": ingredients,
         #                     "how_to": how_to,
         #                     "vegetarian": vegetarian,
         #                     "recipe_image_Id": randomFileName,
         #                     "author": author.lower()}
-
-        mongo.db.recipe_project.replaceOne(
+        # document_to_update.update({replacement_data})
+        mongo.db.recipe_project.find_one_and_update(
             {"recipeName": recipeName, "author": author.lower()},
-            {"recipeName": recipeName,
-             "ingredients": ingredients,
-             "how_to": how_to,
-             "vegetarian": vegetarian,
-             "recipe_image_Id": randomFileName,
-             "author": author.lower()})
+            {"$set": {"recipeName": recipeName,
+                      "ingredients": ingredients,
+                      "how_to": how_to,
+                      "vegetarian": vegetarian,
+                      "recipe_image_Id": randomFileName,
+                      "author": author.lower()}}, upsert=False)
 
         return redirect(url_for("load_many_recipes.load_recipes"))
 
 
-@edit_recipe.route("/edit_page")
-def load_edit_page():
-    return render_template("edit_recipe.html")
+@edit_recipe.route("/edit_page/<recipeName>")
+def load_edit_page(recipeName):
+    recipe = mongo.db.recipe_project.find_one({"recipeName": recipeName})
+    return render_template("edit_recipe.html",  recipe=recipe)
