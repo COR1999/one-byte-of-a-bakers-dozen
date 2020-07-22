@@ -1,5 +1,4 @@
 body{
-    /* color: #6A3034; */
     background-color: #F8E18D;
 
 }
@@ -9,16 +8,13 @@ h1{
 }
 
 .recipe-card{
-    /* margin: 0.3rem; */
+
     display: flex;
 
     text-align: center;
     float: none;
     margin: 0 auto;
     margin-top: 1rem;
-
-    /* margin-right: 1rem;
-    margin-left: 1rem; */
 }
 .recipe-card-row{
     margin: auto;
@@ -179,18 +175,6 @@ a:hover{
     font-size: 150%;
     font-weight: 800;
 }
-/* @media(min-width: 992px){
-    .mx-auto-1{
-        margin-left: 20%;
-        margin-right: auto;
-    }
-} */
-/* .mx-auto-1{
-    margin-left: auto;
-    margin-right: auto;
-} */
-
-
 
 .add-recipe-form{
     background-color: #4485AA;

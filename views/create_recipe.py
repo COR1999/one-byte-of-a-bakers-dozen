@@ -3,14 +3,8 @@ import os
 from flask import Flask, render_template, redirect, request, url_for, Blueprint
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from werkzeug.security import generate_password_hash, check_password_hash
 import uuid
-import configparser
-# from run import *
-
 from views.db import mongo
-
-# from run import *
 
 create_recipe = Blueprint('create_recipe', __name__)
 

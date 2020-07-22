@@ -25,7 +25,7 @@ if os.path.exists("views/env.py"):
 
 app = Flask(__name__)
 app.config["MONGO_URI"] = os.getenv("MONGO_URI")
-app.secret_key = "random_string"
+app.secret_key = os.getenv("secret_key")
 mongo.init_app(app)
 
 # app.register_blueprint(create_app, url_prefix='/views')

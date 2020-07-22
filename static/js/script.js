@@ -1,7 +1,4 @@
 
-
-
-// 
 myForm = document.forms["recipe-form"]
 function validate() {
     if (myForm["recipeName"].value == "") {
@@ -34,11 +31,3 @@ function isImage(file) {
     let res = allowedExtentions.includes(splitEx)
     return res;//returns true or false
 }
-
-// $(document).ready(function () {
-//     myForm.onsubmit = function () {
-//         // do what you want
-
-//         return false
-//     }
-// })

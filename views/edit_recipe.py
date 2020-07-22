@@ -3,14 +3,8 @@ import os
 from flask import Flask, render_template, redirect, request, url_for, Blueprint
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from werkzeug.security import generate_password_hash, check_password_hash
 import uuid
-import configparser
-# from run import *
-
 from views.db import mongo
-
-# from run import *
 
 edit_recipe = Blueprint('edit_recipe', __name__)
 
@@ -28,15 +22,7 @@ def edit():
         author = request.form.get("author")
         if vegetarian == None:
             vegetarian = False
-        # document_to_update = mongo.db.recipe_project.find_one({"recipeName": recipeName,
-        #                                                        "author": author.lower()})
-        # replacement_data = {"recipeName": recipeName,
-        #                     "ingredients": ingredients,
-        #                     "how_to": how_to,
-        #                     "vegetarian": vegetarian,
-        #                     "recipe_image_Id": randomFileName,
-        #                     "author": author.lower()}
-        # document_to_update.update({replacement_data})
+
         mongo.db.recipe_project.find_one_and_update(
             {"recipeName": recipeName, "author": author.lower()},
             {"$set": {"recipeName": recipeName,
