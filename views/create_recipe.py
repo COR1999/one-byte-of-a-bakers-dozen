@@ -1,8 +1,8 @@
 
 import os
-from flask import Flask, render_template, redirect, request, url_for, Blueprint
-from flask_pymongo import PyMongo
-from bson.objectid import ObjectId
+from flask import Flask, render_template, redirect, request, url_for, Blueprint, session
+# from flask_pymongo import PyMongo
+# from bson.objectid import ObjectId
 import uuid
 from views.db import mongo
 
@@ -19,8 +19,10 @@ def create():
         how_to = request.form.get("how_to").split("\n")
         recipeName = request.form.get("recipeName")
         vegetarian = request.form.get("vegetarian")
-        author = request.form.get("firstName")+" " + \
-            request.form.get("lastName")
+
+        author = session["user_name"]
+        # author = request.form.get("firstName")+" " + \
+        #     request.form.get("lastName")
         if vegetarian == None:
             vegetarian = False
         mongo.db.recipe_project.insert_one(

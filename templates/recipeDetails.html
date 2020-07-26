@@ -10,9 +10,9 @@
             <h4 class="card-title" style="text-align: center;">{{recipe.recipeName}}</h4>
             <div class="card-text-details vegetarian-true-false">
                 {%if recipe.vegetarian%}
-                <h5>Vegetarian: <i class='fa-li fa fa-check-square checkbox-true'></i></h5>
+                <h5>Vegetarian: <i class='checkbox-true fa fa-check-square'></i></h5>
                 {% else %}
-                <h5>Vegetarian: <i class='fa-li fa fa-square checkbox-false'></i></h5>
+                <h5>Vegetarian: <i class='checkbox-false fa fa-square '></i></h5>
                 {% endif %}
             </div>
             <div class="card-text-details card-ingredients col-md-12" style=" float: left; padding: 0.4rem;">
@@ -36,8 +36,10 @@
         </div>
         <!-- {{recipe.author}}{{session["user_name"]}} -->
         {% if session["user_name"] == recipe.author %}
-        <a class="button btn btn-success"
+        <a class="button btn btn-success mx-auto"
             href="{{url_for('edit_recipe.load_edit_page', recipeName=recipe.recipeName)}}">Edit</a>
+        <a class="button btn btn-danger mx-auto"
+            href="{{url_for('edit_recipe.delete_recipe', recipeName=recipe.recipeName)}}">Delete Recipe</a>
         {% endif %}
     </div>
     {% endblock %}

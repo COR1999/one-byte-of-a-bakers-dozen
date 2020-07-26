@@ -1,8 +1,8 @@
 
 import os
 from flask import Flask, render_template, redirect, request, url_for, Blueprint
-from flask_pymongo import PyMongo
-from bson.objectid import ObjectId
+# from flask_pymongo import PyMongo
+# from bson.objectid import ObjectId
 import uuid
 from views.db import mongo
 
@@ -40,3 +40,9 @@ def load_edit_page(recipeName):
     recipe = mongo.db.recipe_project.find_one({"recipeName": recipeName})
     image = recipe["recipe_image_Id"]
     return render_template("edit_recipe.html",  recipe=recipe, image=image)
+
+
+@edit_recipe.route("/delete_recipe/<recipeName>")
+def delete_recipe(recipeName):
+    mongo.db.recipe_project.delete_one(({"recipeName": recipeName}))
+    return redirect(url_for("load_many_recipes.load_recipes"))

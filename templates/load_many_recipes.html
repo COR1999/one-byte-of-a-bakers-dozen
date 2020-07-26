@@ -1,10 +1,21 @@
 {% extends "layout/footer_nav.html" %}
 {% block content %}
 
-{% if not session["user_name"] %}
-<div class="row">
-    <h2 class="mx-auto">Please log in to edit recipes</h2>
 
+{% if session["user_name"] %}
+<div class="row">
+    <div class="col">
+        <div class="float-right" style="margin-right:2%;">
+            <h4 class="float-left">Add a
+                recipe: &nbsp;</h4>
+            <a class="float-right" href=" {{url_for('create_recipe.load_create_page')}}"><i class="fa fa-plus fa-2x"
+                    aria-hidden="true"></i></a>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="row" style="width:100%;">
+    <h2 class="mx-auto">Please log in to edit recipes</h2>
 </div>
 {% endif %}
 <div class="row recipe-card-row">

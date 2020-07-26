@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -17,54 +18,31 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-
-            <div class="navbar-nav" style="width:100%;">
-                {% if session["user_name"] %}
-                <div class="" style="width:30%;">
-
-                    <a class="navbar-brand float-left" style="width:30%; padding:0;"
-                        href="{{url_for('load_many_recipes.load_recipes')}}">One byte
-                        of a
-                        bakers
-                        dozen</a>
-                </div>
-                <div class="" style="width:40%;">
-                    <a class="nav-item nav-link active" style="display:inline; padding:0;" href="
-                        {{url_for('load_many_recipes.load_recipes')}}">Home
-                        <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" style="display:inline; padding:0;"
-                        href=" {{url_for('create_recipe.load_create_page')}}">Add a
-                        recipe</a>
-                </div>
-                {% else %}
-                <div class="" style="width:30%;">
-                    <a class="navbar-brand  float-left" style="padding:0;"
-                        href="{{url_for('load_many_recipes.load_recipes')}}">One byte
-                        of a
-                        bakers
-                        dozen</a>
-                </div>
-                <div class="" style="width:40%;">
-                    <a class="nav-item nav-link active center " style="padding:0;"
-                        href="{{url_for('load_many_recipes.load_recipes')}}">Home
-                        <span class="sr-only">(current)</span></a>
-                </div>
-                {% endif %}
-                <div class="" style="width:30%;  padding:0;">
-                    <div class="nav-item " id="content-wrap">
-                        {% if session["user_name"] %}
-                        <h4 class="float-left" style="line-height: inherit;">Welcome {{ session["user_name"] }}</h4>
-                        <a type="button" class="btn btn-primary float-right" style="display:inline; padding:2.5;"
-                            href="{{url_for('logout_user.logout')}}">logout</a>
-                        {% else %}
-                        <button type="button" class="btn btn-primary float-right" data-toggle="modal"
-                            data-target="#login">Login</button>
-                        {% endif %}
-
-                    </div>
-
-                </div>
+            <div class="navbar-nav float-left" style="">
+                <a class="navbar-brand" href="{{url_for('load_many_recipes.load_recipes')}}">One byte
+                    of a
+                    bakers
+                    dozen</a>
             </div>
+            {% if session["user_name"] %}
+            <div class="navbar-nav mx-auto">
+                <h4 class="nav-item mx-auto">Welcome
+                    {{ session["user_name"] }}</h4>
+            </div>
+            <div class="navbar-nav ml-auto" style="padding:0; display:inline;">
+
+                <a type="button" class="nav-item btn btn-primary justify-content-end" style="display: inline;"
+                    href="{{url_for('logout_user.logout')}}">logout</a>
+            </div>
+            {% else %}
+            <div class="navbar-nav ml-auto">
+
+                <button type="button" class="nav-item btn btn-primary justify-content-end" data-toggle="modal"
+                    data-target="#login">Login</button>
+            </div>
+            {% endif %}
+        </div>
+        </div>
 
 
         </div>

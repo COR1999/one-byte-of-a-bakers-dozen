@@ -1,11 +1,9 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, Blueprint
 from flask_pymongo import PyMongo
-from bson.objectid import ObjectId
+# from bson.objectid import ObjectId
 from views.db import mongo
-from flask import Blueprint
 
-# from run import *
 
 recipe_details = Blueprint('recipe_details', __name__)
 
