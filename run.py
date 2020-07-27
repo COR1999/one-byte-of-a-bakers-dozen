@@ -13,7 +13,7 @@ from views.create_recipe import create_recipe
 from views.edit_recipe import edit_recipe
 from views.logout import logout_user
 from views.recipe_details import recipe_details
-from views.my_recipes import my_recipes
+# from views.my_recipes import my_recipes
 
 
 if os.path.exists("views/env.py"):
