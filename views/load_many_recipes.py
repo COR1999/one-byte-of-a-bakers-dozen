@@ -10,12 +10,6 @@ from views.db import mongo
 # from run import *
 load_many_recipes = Blueprint('load_many_recipes', __name__)
 
-
-# @load_many_recipes.route("/")
-# def index():
-#     return load_recipes()
-
-
 @load_many_recipes.route("/")
 def load_recipes():
     # session["user_name"] = "cian"
