@@ -1,28 +1,19 @@
 {% extends "layout/footer_nav.html" %}
 {% block content %}
 
-
-{% if session["user_name"] %}
 <div class="row">
     <div class="col">
         <div class="float-right" style="margin-right:2%;">
-            <!-- <h4 class="float-left">Add a
-                recipe: &nbsp;</h4> -->
-            <a class="btn btn-default" href="{{url_for('create_recipe.load_create_page')}}"><i class="fa fa-plus fa-3x"
-                    aria-hidden="true"></i></a>
+            <button class="btn btn-default"><i class=" fa fa-plus fa-3x" aria-hidden="true"
+                    href=" {{url_for('create_recipe.load_create_page')}}"></i></button>
         </div>
     </div>
 </div>
-{% else %}
-<div class="row" style="width:100%;">
-    <h2 class="mx-auto">Please log in to edit recipes</h2>
-</div>
-{% endif %}
 <div class="row recipe-card-row">
-    {% for recipe in recipeCollection %}
+    {% for recipe in  recipeCollection %}
 
     <div class="card recipe-card col-md-4 col-sm-12" style="width: 100%;">
-        <img src="{{url_for('load_many_recipes.showImage', filename=recipe['recipe_image_Id'])}}" style=""
+        <img src="{{url_for('load_many_recipes.showImage', filename=recipe.recipe['recipe_image_Id'])}}" style=""
             class="mx-auto">
         <div class="card-body">
             <h4 class="card-title">{{recipe.recipeName}}</h4>
@@ -36,14 +27,6 @@
                     {% endfor %}
                 </ul>
                 <h6 class="text-capitalize">Author: {{recipe.author}}</h6>
-                <div class=" button-wrapper">
-
-                    <a class="button btn btn-success"
-                        href="{{url_for('recipe_details.details_recipe', recipeName=recipe.recipeName)}}">Details</a>
-
-
-
-                </div>
             </div>
 
         </div>

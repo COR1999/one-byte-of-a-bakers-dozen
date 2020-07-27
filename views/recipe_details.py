@@ -1,6 +1,6 @@
 import os
 from flask import Flask, render_template, redirect, request, url_for, Blueprint
-from flask_pymongo import PyMongo
+# from flask_pymongo import PyMongo
 # from bson.objectid import ObjectId
 from views.db import mongo
 

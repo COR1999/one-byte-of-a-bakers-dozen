@@ -58,9 +58,29 @@ def insertRecipe(recipeName, ingredients, how_to, vegetarian, pathImage, author)
 
 logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
 wipeDataBase()
-insertRecipe("Apple Tart", ["4 apple's", "pastery"],
-             ["Push them all togeather", "mash them up", "eat"],
-             False, "./testData/apple.jpg", "billy joel")
+insertRecipe("Apple Tart", [
+    "225 g Plain White Flour or 2 Cups",
+    "130 g Irish Butter Unsalted (room temp) or a 1/2 Cup",
+    "1 tsp Salt",
+    "2 tbsp Caster Sugar",
+    "45 ml Cold Water or Milk or 3 tbsp", "4 Large Cooking apples approx 675 g / 1 1/2 lbs",
+    "75 g Caster Sugar or 6 tbsp",
+    "A little bit of milk to glaze or egg yold mixed with milk"],
+    ["Preheat oven to 200°C/400°F/Gas 6.",
+     "Place butter/margarine in freezer for about 15 minutes to harden.",
+     "Sieve flour into a bowl",
+     "Grate hard butter/margarine into the flour. You may need a little flour on your fingers for this.",
+     "Using a knife, mix grated butter/margarine into flour.",
+     "Add sufficient water and mix to a soft dough with the knife.",
+     "Turn onto a floured board and knead lightly.",
+     "Roll out half the pastry to the size of an oven proof plate.",
+     "Arrange apples on the pastry.",
+     "Sprinkle with sugar to sweeten.",
+     "Roll remaining pastry to cover the apples.",
+     "Dampen edge of base pastry with cold water to seal.",
+     "Press top pastry over apples to make the tart. Seal the edges by using the back of a knife to form a crust. Then cut at 1'/3cm intervals to form a scalloped edge, if liked!",
+     "Put a cut on top of pastry to allow steam to escape and bake for 25-35 minutes approx."],
+    False, "./testData/appletart.jpg", "billy joel")
 insertRecipe("Pancake", ["100g plain flour", "Pinch of salt", "1 Bord Bia Quality Assured egg", "300 ml milk", "1 tablsp. melted butter or sunflower oil"],
              ["Sift the flour and salt into a mixing bowl and make a well in the centre.",
               "Crack the egg into the well; add the melted butter or oil and half the milk. Gradually draw the flour into the liquid by stirring all the time with a wooden spoon until all the flour has been incorporated and then beat well to make a smooth batter.",
