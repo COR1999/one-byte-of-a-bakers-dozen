@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static',filename='favicon/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static',filename='favicon/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static',filename='favicon/favicon-16x16.png')}}">
+    <link rel="manifest" href="favicon/site.webmanifest">
 </head>
 
 <body>
@@ -32,8 +36,8 @@
             <!-- <a href="{{url_for('my_recipes.load_my_recipes', author=session['user_name'])}}">My recipes</a> -->
             <div class="navbar-nav ml-auto" style="padding:0; display:inline;">
 
-                <a type="button" class="nav-item btn btn-primary justify-content-end" style="display: inline;"
-                    href="{{url_for('logout_user.logout')}}">logout</a>
+                <a type="button" class="nav-item btn btn-primary justify-content-end logout-button"
+                    style="display: inline;" href="{{url_for('logout_user.logout')}}">logout</a>
             </div>
             {% else %}
             <div class="navbar-nav ml-auto">

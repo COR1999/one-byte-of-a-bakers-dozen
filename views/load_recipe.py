@@ -1,10 +1,5 @@
 import os
 from flask import Flask, render_template, redirect, request, url_for, Blueprint
-# from flask_pymongo import PyMongo
-# from bson.objectid import ObjectId
-# from run import *
-
-# from run import *
 
 load_recipe = Blueprint('load_recipe', __name__)
 

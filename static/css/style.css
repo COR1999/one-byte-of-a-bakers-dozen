@@ -154,21 +154,24 @@ h1{
 a:hover{
     text-decoration: none;
 } */
-@media (max-width:1090px){
+@media (min-width:1090px){
     .navbar-brand{
-        /* font-size: 30%;
-        margin:auto; */
+        font-size: 150%;
         /* margin-left: -35%; */
         
     }
     .show{
         /* font-size: 60%; */
     }
-    /* .show > .navbar-brand{
-        font-size: 90%;
-    } */
+    .show > .navbar-brand{
+        font-size: 50%;
+    }
 
-    .nav-child{
+    /* nav-child{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }.nav-child{
         margin-left: auto;
         margin-right: auto;
         width: 100%;
@@ -178,6 +181,10 @@ a:hover{
         margin-right: auto; */
         float: none;
     }
+    .logout-button{
+        justify-content: center;
+        font-size: 70%;
+    } */
 }
 #content-wrap{
     margin: auto;
@@ -209,7 +216,7 @@ a:hover{
     text-align: center;
 }
 .navbar-brand{
-    font-size: 150%;
+    font-size: 60%;
     font-weight: 800;
 }
 
