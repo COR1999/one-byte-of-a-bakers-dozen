@@ -10,8 +10,8 @@ my_recipes = Blueprint('my_recipes', __name__)
 
 @my_recipes.route("/my_recipes/<author>")
 def load_my_recipes(author):
-
-    my_recipes = mongo.db.recipe_project.find({"Author": author})
+    my_recipes = mongo.db.recipe_project.find({"Author": author.lower()})
     list_of_recipes = list(my_recipes)
     # image = recipe["recipe_image_Id"]
+    print("worked")
     return render_template("my_recipes.html",  recipeCollection=list_of_recipes)

@@ -29,7 +29,7 @@
                 <h4 class="nav-item mx-auto">Welcome
                     {{ session["user_name"] }}</h4>
             </div>
-            <a href="{{url_for('my_recipes.load_my_recipes', author=session['user_name'])}}">My recipes</a>
+            <!-- <a href="{{url_for('my_recipes.load_my_recipes', author=session['user_name'])}}">My recipes</a> -->
             <div class="navbar-nav ml-auto" style="padding:0; display:inline;">
 
                 <a type="button" class="nav-item btn btn-primary justify-content-end" style="display: inline;"
@@ -56,8 +56,8 @@
 
         <footer class="tm-footer row tm-mt-small">
             <div class="col-12 font-weight-light">
-                <p class="text-center text-white mb-0 px-4 small">
-                    Copyright &copy; <b>2020</b> All rights reserved.
+                <p class="text-center mb-0 px-4 small pt-5">
+                    <b>Copyright &copy; 2020 All rights reserved.</b>
 
                 </p>
             </div>
