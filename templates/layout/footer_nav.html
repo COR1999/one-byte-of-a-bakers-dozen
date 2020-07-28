@@ -16,14 +16,14 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light row">
         <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav float-left" style="">
-                <a class="navbar-brand" href="{{url_for('load_many_recipes.load_recipes')}}">One byte
+            <div class="navbar-nav" style="">
+                <a class="navbar-brand col-xs-6" href="{{url_for('load_many_recipes.load_recipes')}}">One byte
                     of a
                     bakers
                     dozen</a>
@@ -35,14 +35,14 @@
             </div>
             <div class="navbar-nav ml-auto" style="padding:0; display:inline;">
 
-                <a type="button" class="nav-item btn btn-primary justify-content-end logout-button"
+                <a type="button" class="nav-item btn btn-primary justify-content-end logout-login-button "
                     style="display: inline;" href="{{url_for('logout_user.logout')}}">logout</a>
             </div>
             {% else %}
             <div class="navbar-nav ml-auto">
 
-                <button type="button" class="nav-item btn btn-primary justify-content-end" data-toggle="modal"
-                    data-target="#login">Login</button>
+                <button type="button" class="nav-item btn btn-primary justify-content-end logout-login-button"
+                    style="display: inline;" data-toggle="modal" data-target="#login">Login</button>
             </div>
             {% endif %}
         </div>
@@ -57,7 +57,7 @@
 
         {% block content %}{% endblock %}
 
-        <footer class="tm-footer row tm-mt-small">
+        <footer class="tm-footer row tm-mt-small" style="width: 100%;">
             <div class="col-12 font-weight-light">
                 <p class="text-center mb-0 px-4 small pt-5">
                     <b>Copyright &copy; 2020 All rights reserved.</b>

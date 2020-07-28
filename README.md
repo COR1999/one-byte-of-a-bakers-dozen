@@ -29,14 +29,23 @@ Would of liked to make a my recipes page that showcase one persons recipes
     1. Bootstrap components such as grid, card, button, table, navbar where used in my project to simplify creating responsive web application.
 4. [MongoDB](https://www.mongodb.com)
     1. MongoDB was used to store all my recipes and users information.
-5. []()
+    2. I used Pymongo to help connect to mongoDB Atlas cluster
+5. [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+    1. I used Blueprints to help structure my project well
+    2. I used URL_FOR to connect everything togeather
+    3. I used session to help track my user
+    4. I used render_template to render my HTML
+    5. I used redirect to get to my home page alot
+    6. I used request to access my forms data
+    7. 
+6. [Werkzeug security](https://werkzeug.palletsprojects.com/en/1.0.x/utils/)
+    1. I used Werkzeug security to encryt my passwords and to check the passwords to
 7. [VSCODE](https://code.visualstudio.com/) 
     1. VSCODE was used as the development environment.
 8. [Github](https://github.com/)
     1. Github was used for my version control in the project. 
 9. [Font-awesome Version 5.11.1](https://fontawesome.com/) 
     1. Font-awesome was used to get some icons.
-
 
 ## Testing
 1. I used Chrome Dev Tools for debug Testing.
@@ -52,6 +61,8 @@ Would of liked to make a my recipes page that showcase one persons recipes
     3. I checked on mobile to see that everything was working correctly.
     
 
+I ran into some problems trying to get blueprints to work and i solved this problem by changing how i initlised my DB
+i ran into some problems with basic html i solved them by googling
 
 ## Deployment
 I used [Live Server](https://github.com/ritwickdey/vscode-live-server) on my windows PC and once I was happy I committed to github to check that everything ran smoothly there as well. 

@@ -1,9 +1,9 @@
 {% extends 'layout/footer_nav.html'%} {% block content %}
-<div class="add-recipe-form">
-    <form id="recipe-form" name="recipe-form" method="POST" action="/edit" enctype="multipart/form-data"
-        style="width: 50%;" class="mx-auto" onsubmit="validate()">
+<div class="edit-recipe-form mx-auto">
+    <form id="recipe-form" name="recipe-form" method="POST" action="/edit" enctype="multipart/form-data" class="mx-auto"
+        onsubmit="validate()">
         <div class="form-group row">
-            <div class="col-6">
+            <div class="col-6" style="padding: 0;">
                 <label for="recipeName" class="col-form-label"></label>
                 <input type="text" name="recipeName" id="recipeName" class="form-control"
                     style="width: 100%; float:right;" value="{{recipe.recipeName}}" required>
