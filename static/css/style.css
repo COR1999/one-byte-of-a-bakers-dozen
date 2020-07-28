@@ -189,13 +189,13 @@ a:hover{
     width: 40%;
 } */
 .add-recipe-form {
-    max-width: 70%;
+    max-width: 50%;
     background-color: #4485AA;
     padding: 1rem;
     margin-top: 4%;
 }
 .edit-recipe-form{
-    max-width: 70%;
+    max-width: 50%;
     background-color: #4485AA;
     padding: 1rem;
     margin-top: 4%;

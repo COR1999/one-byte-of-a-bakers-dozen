@@ -3,12 +3,12 @@
     <form id="recipe-form" name="recipe-form" method="POST" action="/create" enctype="multipart/form-data"
         class="mx-auto" onsubmit="validate()">
         <div class="form-group row">
-            <div class="col-6" style="padding:0;">
+            <div class="col-6" style="padding:1rem;">
                 <label for="recipeName" class="col-form-label">Recipe Name</label>
                 <input type="text" name="recipeName" id="recipeName" class="form-control"
                     style="width: 100%; float:left;" required>
             </div>
-            <div class="form-check col-6 mt-auto vegetarian-form">
+            <div class="form-check col-6 mt-auto vegetarian-form" style="padding:1rem;">
                 <label class="form-check-label" for="vegetarian">
                     Vegetarian Friendly:
                 </label>
@@ -16,22 +16,22 @@
                     id="vegetarian" name="vegetarian">
             </div>
         </div>
-        <div class="form-group row">
+        <div class="form-group row" style="padding:1rem;">
             <label for="ingredients" class="col-form-label">Ingredients</label>
             <textarea rows="4" name="ingredients" id="ingredients" class="form-control" required></textarea>
         </div>
-        <div class="form-group row">
+        <div class="form-group row" style="padding:1rem;">
             <label for="how_to" class="col-form-label">Steps</label>
             <textarea rows="4" name="how_to" id="how_to" class="form-control" required></textarea>
         </div>
-        <div class="form-group row">
+        <div class="form-group row" style="padding:1rem;">
             <div class="custom-file mx-auto" style="width:60%;">
                 <label for="recipe_image" class="col-form-label custom-file-label">Upload a image</label>
                 <input type="file" name="recipe_image" class="form-control custom-file-input" id="recipe_image"
                     style="width:10%;" required>
             </div>
         </div>
-        <div class="form-group row">
+        <div class="form-group row" style="padding:1rem;">
             <input type="submit" id="submit" class="btn btn-success mx-auto">
         </div>
 </div>

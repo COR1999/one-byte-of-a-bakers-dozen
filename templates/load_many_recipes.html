@@ -4,13 +4,13 @@
 
 {% if session["user_name"] %}
 <div class="row">
-    <div class="col" style="text-align:center; margin-top: 1%;">
+    <div class="col" style="text-align:center; margin-top: 0%;">
         <h2 class="delete-edit-h2">You can only delete and edit your own recipes</h2>
     </div>
     <div class="col">
         <div class="float-right" style="margin-right:2%;">
-            <a class="nav-item btn btn-primary" style="margin-top:8%;"
-                href="{{url_for('create_recipe.load_create_page')}}"><i class="fa fa-plus fa-3x"
+            <a class="nav-item btn btn-primary" style="margin-top:10%;"
+                href="{{url_for('create_recipe.load_create_page')}}"><i class="fa fa-plus fa-2x"
                     aria-hidden="true"></i></a>
         </div>
     </div>
