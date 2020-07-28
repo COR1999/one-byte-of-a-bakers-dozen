@@ -166,11 +166,14 @@ a:hover{
     .show > .navbar-brand{
         font-size: 50%;
     }
-
-    .logout-login-button{
+    .delete-edit-h2{
+        font-size: 100%;
+        margin-top: 4%;
+    }
+    /* .logout-login-button{
         width:20%;
         margin: auto;
-    }
+    } */
     /* #recipe-form{
         width: 100%;
     } */
