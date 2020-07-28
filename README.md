@@ -46,6 +46,8 @@ Would of liked to make a my recipes page that showcase one persons recipes
     1. Github was used for my version control in the project. 
 9. [Font-awesome Version 5.11.1](https://fontawesome.com/) 
     1. Font-awesome was used to get some icons.
+10. [Heroku](https://www.heroku.com/home)
+    1. I used heroku to host my application
 
 ## Testing
 1. I used Chrome Dev Tools for debug Testing.
@@ -71,8 +73,9 @@ I used [Live Server](https://github.com/ritwickdey/vscode-live-server) on my win
 ### Content
 I used [Bootstrap Version 4.4.1](https://getbootstrap.com/) grid system.
 I used [StackOverflow](https://stackoverflow.com/) to solve problems that I couldn't figure out
+I used [Favicon](https://favicon.io/) for my favicon
 ### Media
-
+My recipes where founds from various recipe websites such as [Retrobite](https://www.retrobite.com/)
 ### Acknowledgements
 
 
