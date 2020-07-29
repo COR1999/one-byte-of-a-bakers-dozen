@@ -206,6 +206,12 @@ a:hover{
     .recipe-card-text{
         height: auto;
     }
+    .nav-welcome{
+        margin-left:0 !important;
+    }
+}
+.nav-welcome{
+    margin-left: -35%;
 }
 /* #recipe-form{
     width: 40%;
