@@ -44,12 +44,10 @@ h1{
     font-size: 1.5rem;
     
     }
-
 .button > a {
     color: F2F0EC;
     text-decoration: none;
 }
-
 .button:hover {
     color: #4485AA;
     text-decoration: none;
@@ -81,7 +79,6 @@ h1{
     font-size: 100%;
 }
 .card-title{
-    /* font-size: 200%; */
     color: #F8E18D;
     font-weight: 800;
 }
@@ -138,7 +135,6 @@ h1{
 .recipe-card-text{
     width: 100%;
     float: left; 
-    /* padding: 0.1rem;  */
     height:40%;
     font-size: 100%;
 }
@@ -176,9 +172,6 @@ h1{
         padding: .5rem;
         margin: .5rem;
     }
-    .card-text-details{
-
-    }
     .recipe-card-text{
         height: auto;
     }
@@ -188,16 +181,8 @@ h1{
     .add-button{
         margin-top:50%;
     }
-    .logout-login-button{
-        margin:auto;
-    }
 }
-.logout-login-button{
-    margin: auto;
-}
-.add-button{
-    margin-top:1%;
-}
+
 .delete-edit-h3{
     margin-top: 1%;
 }
@@ -306,5 +291,4 @@ label{
 .btn-success:hover{
     color: #3bda63;
     background-color: #6A3034;
-
 }

@@ -10,9 +10,6 @@ load_many_recipes = Blueprint('load_many_recipes', __name__)
 def load_recipes():
     all_recipes = mongo.db.recipe_project.find()
     list_of_recipes = list(all_recipes)
-
-    print(list(all_recipes))
-
     return render_template("load_many_recipes.html", recipeCollection=list_of_recipes)
 
 

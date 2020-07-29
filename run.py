@@ -27,7 +27,6 @@ app.register_blueprint(load_many_recipes)
 app.register_blueprint(recipe_details)
 app.register_blueprint(login_user)
 app.register_blueprint(register_user)
-# This line is to connect to my my_recipes page which is in git ignore
 app.register_blueprint(my_recipes)
 
 

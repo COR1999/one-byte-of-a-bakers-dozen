@@ -27,8 +27,6 @@
             class="mx-auto">
         <div class="card-body">
             <h4 class="card-title">{{recipe.recipeName}}</h4>
-
-
             <div class="card-text recipe-card-text" style="width: 100%; float: left; padding: 0.4rem;">
                 <h6>Ingredients</h6>
                 <ul>
@@ -38,15 +36,10 @@
                 </ul>
                 <h6 class="text-capitalize">Author {{recipe.author}}</h6>
                 <div class=" button-wrapper">
-
                     <a class="button btn btn-success"
                         href="{{url_for('recipe_details.details_recipe', recipeName=recipe.recipeName)}}">Details</a>
-
-
-
                 </div>
             </div>
-
         </div>
     </div>
 

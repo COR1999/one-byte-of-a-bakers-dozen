@@ -32,7 +32,6 @@
             <div class="navbar-nav mx-auto">
                 <h4 class="nav-item nav-welcome">Welcome
                     {{ session["user_name"] }}</h4>
-
             </div>
             <div class="navbar-nav ml-auto" style="padding:0;">
                 <div class="float-left">
@@ -41,46 +40,35 @@
                         Recipes</a>
                 </div>
                 <div class="float-right">
-
                     <a type="button" class="nav-item btn btn-primary logout-login-button "
                         href=" {{url_for('logout_user.logout')}}">logout</a>
                 </div>
             </div>
             {% else %}
             <div class="navbar-nav ml-auto">
-
                 <button type="button" class="nav-item btn btn-primary justify-content-end logout-login-button mx-auto"
                     style="display: inline;" data-toggle="modal" data-target="#login">Login</button>
             </div>
             {% endif %}
         </div>
         </div>
-
-
         </div>
     </nav>
-
-
     <div id="page-container">
-
         {% block content %}{% endblock %}
-
         <footer class="tm-footer row tm-mt-small" style="width: 100%;">
             <div class="col-12 font-weight-light">
                 <p class="text-center mb-0 px-4 small pt-5">
                     <b>Copyright &copy; 2020 All rights reserved.</b>
-
                 </p>
             </div>
         </footer>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <link href="{{url_for('static', filename='js/script.js')}}" type="js" />
-
 </body>
 
 </html>
