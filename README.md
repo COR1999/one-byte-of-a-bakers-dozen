@@ -1,24 +1,27 @@
 # One Byte of a bakers dozen
 ## Overview
-The name came from the idea that its to do with cooking and its a pun on bite
+The name came from the idea that its to do with cooking and its a pun on bite.
+For this application you will need to register and login to create or edit recipes.
+Please use the email "user@gmail.com" and the password "abc"
 ## UX
 In this project I wish to achieve a UX that is easy and very straight forward
-and lets show the user what exaclty to do
+and lets the user interact in a easy way.
 ## Features
 ### Existing Functionality
-ability to add edit and remove recipes when logged in
-ability to log in and register
-only users who created the recipe can edit it when logged in
-got the users session
-encrypted passwords
-storing users and recipes on mongodb
-i created a srcipt to input my test data so when its ran it deletes everything in the database and inputs preset data
-
-
-
+* Ability to log in and register logout
+* Ability to add, edit and remove recipes when logged in
+* Only users who created the recipe can edit it
+* The ability to view my recipes
+* Storing users and recipes on mongodb
+* Encrypted passwords
+* Ability to view more details about a recipe
+* A recipe has a list of ingredients, preparation step and vegetarian option
+* I created a script to input my test data. I used this to quickly repopulate the database when testing
 
 ### Future Enhancements
-Would of liked to make a my recipes page that showcase one persons recipes
+* I would like to make a "My Recipes" page that showcase one persons recipes
+* Search/filter functionality would be a good addition
+* More options like preparation time, gluten free etc
 ## Technologies Used
 1. [HTML5](https://en.wikipedia.org/wiki/HTML5 )
     1. I used HTML for the basic structure of the website.
@@ -37,9 +40,8 @@ Would of liked to make a my recipes page that showcase one persons recipes
     4. I used render_template to render my HTML
     5. I used redirect to get to my home page alot
     6. I used request to access my forms data
-    7. 
 6. [Werkzeug security](https://werkzeug.palletsprojects.com/en/1.0.x/utils/)
-    1. I used Werkzeug security to encryt my passwords and to check the passwords to
+    1. I used Werkzeug security to encrypt my passwords and to check the passwords
 7. [VSCODE](https://code.visualstudio.com/) 
     1. VSCODE was used as the development environment.
 8. [Github](https://github.com/)
@@ -61,11 +63,9 @@ Would of liked to make a my recipes page that showcase one persons recipes
     1. I tested that everything worked okay when resizing the browser.
     2. I ran all my tests on localhost (root website) then pushed it onto github (where ran off the subdomain). Checked that all resources loaded properly off the root and subdomain.
     3. I checked on mobile to see that everything was working correctly.
-    
-
-I ran into some problems trying to get blueprints to work and i solved this problem by changing how i initlised my DB
-i ran into some problems with basic html i solved them by googling
-
+    4. I ran into some problems trying to get blueprints to work and i solved this problem by changing how I initialised my DB.
+    5. I ran into some problems with basic html i solved them by googling.
+    6. for some reason i couldnt add a margin to some of the buttons so thats why they are a bit cluttered
 ## Deployment
 I used [Live Server](https://github.com/ritwickdey/vscode-live-server) on my windows PC and once I was happy I committed to github to check that everything ran smoothly there as well. 
 

@@ -8,6 +8,5 @@ logout_user = Blueprint('logout_user', __name__)
 @logout_user.route("/logout")
 def logout():
     session["user_name"] = ""
-    print("hello")
+    # print("hello")
     return redirect(url_for("load_many_recipes.load_recipes"))
-

@@ -89,8 +89,8 @@ insertRecipe("Pancake", ["100g plain flour", "Pinch of salt", "1 Bord Bia Qualit
               "Lightly grease with oil and then ladle in enough batter to coat the base of the pan thinly (about 2 tablsp.), tilting the pan so the mixture spreads evenly.",
               "Cook over a moderate heat for 1-2 minutes or until the batter looks dry on the top and begins to brown at the edges. Flip the pancake over with a palette knife or fish slice and cook the second side.",
               "Turn onto a plate, smear with a little butter, sprinkle of sugar and a squeeze of lemon juice and serve."],
-             True,
-             "./testData/pancake.jpg", "Sam Smith")
+             False,
+             "./testData/pancake.jpg", "user 1")
 
 insertRecipe("Scones", ["350g self-raising flour, plus more for dusting", "¼ tsp salt", "1 tsp baking powder",
                         "85g butter and cut into cubes", "3 tbsp caster sugar", "175ml milk", "1 tsp vanilla extract", "squeeze lemon juice", "beaten egg to glaze",
@@ -107,7 +107,7 @@ insertRecipe("Scones", ["350g self-raising flour, plus more for dusting", "¼ ts
               "Brush the tops with a beaten egg, then carefully place onto the hot baking tray.",
               "Bake for 10 mins until risen and golden on the top. Eat just warm or cold on the day of baking, generously topped with jam and clotted cream. ",
               "If freezing, freeze once cool. Defrost, then put in a low oven (about 160C/fan140C/gas 3) for a few mins to refresh."],
-             True,
+             False,
              "./testData/scones.jpg", "billy joel")
 insertRecipe("Chorizo & mozzarella gnocchi bake", ["1 tbsp olive oil", "1 onion finely, chopped", "2 garlic cloves, crushed",
                                                    "120g chorizo, diced", "2 x 400g cans chopped tomatoes",
@@ -120,10 +120,31 @@ insertRecipe("Chorizo & mozzarella gnocchi bake", ["1 tbsp olive oil", "1 onion 
              False,
              "./testData/chorizoPasta.jpg", "cian orourke")
 
-# wipeDataBase()
-print(insertRecipe)
-print("ending program")
-# if __name__ == "__main__":
-#     app.run(host=os.environ.get("IP"),
-#             port=(os.environ.get("PORT")),
-#             debug=True)
+
+insertRecipe("Creamy herb chicken", ["4 chicken breasts (pounded 1/2-inch thin)", "2 teaspoons each of onion powder and garlic powder", "1 teaspoon fresh chopped parsley", "1/2 teaspoon each of dried thyme and dried rosemary*", "salt and pepper , to season", "4 cloves garlic , minced (or 1 tablespoon minced garlic)", "1 teaspoon fresh chopped parsley", "1/2 teaspoon each of dried thyme and dried rosemary", "1 cup milk (or half and half)*", "Salt and freshly ground black pepper , to taste", "1 teaspoon cornstarch mixed with 1 tablespoon water , until smooth"],
+             ["Coat chicken breasts with the onion and garlic powders and herbs. Season generously with salt and pepper.",
+              "Heat 1 tablespoon of oil a large pan or skillet over medium-high heat and cook chicken breasts until opaque and no longer pink inside (about 5 minutes each side, depending on thickness). Transfer to a plate; set aside.", "To the same pan or skillet, heat another 2 teaspoons of olive oil and sauté garlic, with parsley, thyme and rosemary, for about 1 minute, or until fragrant.", "Stir in milk (or cream); season with salt and pepper, to taste.", "Bring to a boil; add the cornstarch mixture to the centre of the pan, quickly stirring, until sauce has thickened slightly. Reduce heat and simmer gently for a further minute to allow the sauce to thicken more.", "Return chicken to the skillet. Sprinkle with extra herbs if desired. Serve immediately."],
+             False,
+             "./testData/creamy-herb-chicken.jpg", "user 1")
+insertRecipe("Caponata pasta", ["4 tbsp olive oil(or use the oil from your chargrilled veg, see below)",
+                                "1 large onion",
+                                "4 garlic cloves, finely sliced",
+                                "250g chargrilled Mediterranean veg (peppers and aubergines, if possible) from a jar, pot or deli counter, drained if in oil (you can use this oil in place of the olive oil) and roughly chopped",
+                                "400g can chopped tomatoes", "1 tbsp small capers", "2 tbsp raisins", "350g rigatoni, penne or another short pasta shape", "bunch of basil, leaves picked", " parmesan(or vegetarian alternative), shaved, to serve"],
+             ["Tip in the mixed veg, tomatoes, capers and raisins. Season well and simmer, uncovered, for 10 mins, or until you have a rich sauce.",
+              "Meanwhile, boil the kettle. Pour the kettleful of water into a large pan with a little salt and bring back to the boil. Add the pasta and cook until tender with a little bite, then drain, reserving some of the pasta water. Tip the pasta into the sauce, adding a splash of pasta water if it needs loosening. Scatter with the basil leaves and parmesan, if you like, and serve straight from the pan"],
+             True,
+             "./testData/caponata-pasta.jpg", "user 1")
+
+insertRecipe("Sweetcorn & courgette fritters",
+             ["198g can sweetcorn, drained",
+              "2 spring onions",
+              "50g courgette, grated",
+              "1 tsp smoked paprika",
+              "50g self raising flour", "5 eggs, 1 beaten, 4 for poaching", "40ml milk", "4 tbsp sweet chilli sauce", "juice 1 lime", "1 tbsp vegetable oil", "mixed leave, to serve"],
+             ["Mix the sweetcorn, spring onions, courgette, paprika, flour, beaten egg, milk and some seasoning in a large bowl and set aside.",
+              "Put a large pan of water on to boil. In a bowl, mix the chilli sauce with the lime juice and set aside.",
+              "Heat the oil in a large, non-stick pan and spoon in four burger-sized mounds of the fritter mixture, spaced apart (you may need to do this in two batches). When brown on the underside, turn over and cook for 3 mins more until golden.",
+              "Meanwhile, poach the eggs in the simmering water for 2-3 mins until cooked and the yolks are runny. Remove with a slotted spoon. Serve the fritters topped with a poached egg, mixed leaves and a drizzle of the chilli dressing."],
+             True,
+             "./testData/sweetcorn-courgette-fritters.jpg", "user 1")

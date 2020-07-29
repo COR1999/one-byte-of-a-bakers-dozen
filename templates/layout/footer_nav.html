@@ -32,11 +32,19 @@
             <div class="navbar-nav mx-auto">
                 <h4 class="nav-item nav-welcome">Welcome
                     {{ session["user_name"] }}</h4>
-            </div>
-            <div class="navbar-nav ml-auto" style="padding:0; display:inline;">
 
-                <a type="button" class="nav-item btn btn-primary justify-content-end logout-login-button "
-                    style="display: inline;" href="{{url_for('logout_user.logout')}}">logout</a>
+            </div>
+            <div class="navbar-nav ml-auto" style="padding:0;">
+                <div class="float-left">
+                    <a type="button" class="nav-item btn btn-primary logout-login-button"
+                        href="{{url_for('my_recipes.load_my_recipes')}}">My
+                        Recipes</a>
+                </div>
+                <div class="float-right">
+
+                    <a type="button" class="nav-item btn btn-primary logout-login-button "
+                        href=" {{url_for('logout_user.logout')}}">logout</a>
+                </div>
             </div>
             {% else %}
             <div class="navbar-nav ml-auto">
