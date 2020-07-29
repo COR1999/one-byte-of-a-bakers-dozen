@@ -16,14 +16,14 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light row">
+    <nav class="navbar navbar-expand-lg navbar-light row" style="width: auto;">
         <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav mr-auto" style="">
-                <a class="navbar-brand" href="{{url_for('load_many_recipes.load_recipes')}}">One byte
+                <a class="navbar-brand" id="navbar-brand" href="{{url_for('load_many_recipes.load_recipes')}}">One byte
                     of a
                     bakers
                     dozen</a>
@@ -41,7 +41,7 @@
             {% else %}
             <div class="navbar-nav ml-auto">
 
-                <button type="button" class="nav-item btn btn-primary justify-content-end logout-login-button"
+                <button type="button" class="nav-item btn btn-primary justify-content-end logout-login-button mx-auto"
                     style="display: inline;" data-toggle="modal" data-target="#login">Login</button>
             </div>
             {% endif %}

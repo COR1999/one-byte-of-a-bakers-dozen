@@ -1,7 +1,7 @@
 {% extends "layout/footer_nav.html" %}
 {% block content %}
 <div class="card mx-auto recipeDetails-card">
-    <img src="{{url_for('load_many_recipes.showImage', filename=image)}}" style="" class="">
+    <img src="{{url_for('load_many_recipes.showImage', filename=image)}}" style="max-width: 40%" class="">
 
     <div class="row">
         <div class="card-body col-md-12">
@@ -39,4 +39,7 @@
             href="{{url_for('edit_recipe.delete_recipe', recipeName=recipe.recipeName)}}">Delete Recipe</a>
         {% endif %}
     </div>
+
+    {% include 'modals.html'%}
+
     {% endblock %}

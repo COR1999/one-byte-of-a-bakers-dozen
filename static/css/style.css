@@ -80,7 +80,7 @@ h1{
     font-size: 110%;
 }
 .card-title{
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #F8E18D;
     font-weight: 800;
 }
@@ -106,8 +106,8 @@ h1{
     width: 80%;
     margin-top: 1rem;
     padding-top: .5rem;
-    color: #F8E18D;
-    font-weight:700;
+    color: white;
+    font-weight:400;
 
 }
 .card-text-details > h5{
@@ -142,6 +142,8 @@ h1{
 }
 .recipe-card{
     max-width:22rem;
+    padding-top:1%;
+    
 }
 .recipe-card img{
     width:100%; 
@@ -157,8 +159,14 @@ a:hover{
 @media (max-width:1090px){
     .navbar-brand{
         font-size: 150%;
+
         /* margin-left: -35%; */
         
+    }
+    .tm-footer{
+        font-size: 70%;
+        margin: auto;
+        padding: 0;
     }
     .show{
         /* font-size: 60%; */
@@ -183,7 +191,21 @@ a:hover{
     /* .add-recipe-form{
         width: 100%;
     } */
+    .recipeDetails-card{
+        width: 100%;
+    }
+    .card-body{
+        font-size: 70%;
+        width: 90%;
+        padding: .5rem;
+        margin: .5rem;
+    }
+    .card-text-details{
 
+    }
+    .recipe-card-text{
+        height: auto;
+    }
 }
 /* #recipe-form{
     width: 40%;
@@ -233,7 +255,11 @@ a:hover{
 }
 .navbar-brand{
     /* font-size: 60%; */
+    margin-left: 3%;
     font-weight: 800;
+}
+#navbar-brand:hover{
+    color: #F8E18D;
 }
 
 label{
@@ -281,4 +307,11 @@ label{
 #signUp .modal-title{
     font-size: 180%;
     font-weight: 700;
+}
+
+
+.btn-success:hover{
+    color: #3bda63;
+    background-color: #6A3034;
+
 }
